@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="鋼鐵雄心4 (Hearts of Iron IV) 控制台指令速查，支援語言切換與深色模式，附裝備代碼與互動地圖工具" name="description"/>
+<meta content="HOI4 玩家社群" name="author"/>
+<meta content="HOI4 Command Toolbox" property="og:title"/>
+<meta content="完整列出鋼鐵雄心4的控制台指令與裝備代碼，支援語言切換與黑暗模式。" property="og:description"/>
+<meta content="https://yourdomain.com/preview.jpg" property="og:image"/>
+<title>HOI4 Command Toolbox</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&amp;display=swap" rel="stylesheet"/>
+<style>
+    .emoji {
+      font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+    }
+  </style>
+<style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      color: #2c3e50;
+      line-height: 1.8;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      color: #006064;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #00838f;
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      color: #00796b;
+      margin-top: 2rem;
+      border-left: 6px solid #4db6ac;
+      padding-left: 1rem;
+      font-size: 1.6rem;
+      scroll-margin-top: 80px;
+    }
+    code {
+      background: #eceff1;
+      padding: 0.3em 0.5em;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      color: #37474f;
+    }
+    section {
+      margin-bottom: 2rem;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 0.7rem;
+    }
+  
+    nav {
+      position: sticky;
+      top: 0;
+      background: #ffffffee;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .nav-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .nav-left a {
+      color: #006064;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.3rem 0.5rem;
+    }
+    .nav-left a:hover {
+      text-decoration: underline;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    #searchBox {
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      width: clamp(150px, 25vw, 300px); /* 自動調整寬度 */
+    }
+    
+    .dark-btn, .lang-btn {
+      padding: 0.4rem 0.6rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .dark-btn {
+      background-color: #00796b;
+    }
+    .lang-btn {
+      background-color: #607d8b;
+    }
+  
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00796b;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      display: none;
+    }
+  
+    [data-en]::after {
+      content: attr(data-en);
+      display: none;
+    }
+  </style>
+<style id="darkModeStyle">
+    [data-theme='dark'] body {
+      background: #121212;
+      color: #eeeeee;
+    }
+    [data-theme='dark'] nav,
+    [data-theme='dark'] section,
+    [data-theme='dark'] #searchBox,
+    [data-theme='dark'] select {
+      background-color: #1e1e1e;
+      color: #eeeeee;
+      border-color: #444;
+    }
+    [data-theme='dark'] code {
+      background-color: #333;
+      color: #a2c4f2;
+    }
+  </style>
+<script defer="" src="lang.js"></script>
+</head>
+<body>
+<h1>鋼鐵雄心4 控制台作弊碼大全</h1>
+<!-- ✅ 固定在標題上的頂部功能列，含收合按鈕與搜尋欄 -->
+<div id="topBar">
+<div class="top-left">
+<div class="toggle-button" id="sidebarToggle">
+<svg fill="none" height="24" stroke="#444" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect>
+<line x1="9" x2="15" y1="9" y2="9"></line>
+<line x1="9" x2="15" y1="15" y2="15"></line>
+</svg>
+</div>
+<input id="searchBox" placeholder="🔍 搜尋指令…" type="text"/>
+</div>
+<div class="top-right">
+<label class="mode-toggle">
+<input id="darkModeToggle" type="checkbox"/>
+<div class="track">
+<span class="sun">🌙</span>
+<span class="moon">🌞</span>
+<div class="slider"></div>
+</div>
+</label>
+<select id="langSelector">
+<option value="zh">繁體中文</option>
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option value="ko">한국어</option>
+<option value="es">Español</option>
+<option value="pt">Português</option>
+<option value="ru">Русский</option>
+</select>
+</div>
+</div>
+<div id="sidebarOverlay"></div>
+<!-- ✅ 側邊面板 -->
+<div id="sidebarPanel">
+<div class="toggle-button" id="sidebarClose">
+<svg fill="none" height="24" stroke="#444" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect>
+<line x1="9" x2="15" y1="12" y2="12"></line>
+</svg>
+</div>
+<nav>
+<div class="nav-section">
+<a data-i18n="section_common_title" href="#section-11">🔁 常用控制台指令</a>
+<a data-i18n="nav_domestic" href="#section-1">🧰 內政外交</a>
+<a data-i18n="nav_territory" href="#section-2">🗺 領土控制</a>
+<a data-i18n="nav_research" href="#section-3">🧪 科技研究</a>
+<a data-i18n="nav_army" href="#section-4">⚔ 戰爭部隊</a>
+<a data-i18n="nav_generals" href="#section-5">🎖 將領經驗</a>
+<a data-i18n="nav_resources" href="#section-6">🛢 資源能源</a>
+<a data-i18n="nav_spies" href="#section-7">🕵️ 間諜特工</a>
+<a data-i18n="nav_hidden" href="#section-8">💥 隱藏指令</a>
+<a data-i18n="nav_industry" href="#section-9">🏭 工業設計</a>
+<a data-i18n="nav_equipment" href="#section-10">🔢 裝備代碼表</a>
+</div>
+</nav>
+</div>
+<style>
+  /* 原有樣式保留 */
+  #topBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+  [data-theme="dark"] #topBar {
+    background-color: #1e1e1e;
+  }
+  .top-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .top-left input {
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  .top-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  #topBar select {
+    padding: 0.4rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  #sidebarPanel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  [data-theme="dark"] #sidebarPanel {
+    background-color: #1e1e1e;
+  }
+  #sidebarPanel.open {
+    transform: translateX(0);
+  }
+  .nav-section {
+    margin-bottom: 1rem;
+  }
+  #sidebarPanel nav a {
+    display: block;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    color: #006064;
+    text-decoration: none;
+  }
+  .toggle-button {
+    background: white;
+    border-radius: 6px;
+    padding: 0.3rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  [data-theme="dark"] .toggle-button {
+    background-color: #2b2b2b;
+  }
+  .mode-icon {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+  }
+  .mode-icon input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .mode-icon span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 1rem;
+    transition: background-color 0.4s;
+  }
+  .mode-icon span::after {
+    content: attr(data-icon);
+  }
+  .mode-icon input:checked + span {
+    background-color: #00796b;
+  }
+  #sidebarOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.2);
+    z-index: 998;
+    display: none;
+  }
+  #sidebarPanel.open + #sidebarOverlay {
+    display: block;
+  }
+  .mode-toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    display: inline-block;
+  }
+  
+  .mode-toggle input {
+    display: none;
+  }
+  
+  .mode-toggle .track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .mode-toggle .slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    z-index: 2;
+  }
+  
+  .mode-toggle input:checked + .track {
+    background-color: #00796b;
+  }
+  
+  .mode-toggle input:checked + .track .slider {
+    transform: translateX(30px);
+  }
+  
+</style>
+<script>
+  const sidebarBtn = document.getElementById("sidebarToggle");
+  const sidebar = document.getElementById("sidebarPanel");
+  const sidebarClose = document.getElementById("sidebarClose");
+  const overlay = document.getElementById("sidebarOverlay");
+  const darkToggle = document.getElementById("darkModeToggle");
+  const slider = document.querySelector(".mode-toggle .slider");
+  const track = document.querySelector(".mode-toggle .track");
+  const sunIcon = document.querySelector(".mode-toggle .sun");
+  const moonIcon = document.querySelector(".mode-toggle .moon");
+
+  function toggleSidebar(forceClose = false) {
+    const isOpen = sidebar.classList.contains("open");
+    if (forceClose || isOpen) {
+      sidebar.classList.remove("open");
+      overlay.style.display = "none";
+    } else {
+      sidebar.classList.add("open");
+      overlay.style.display = "block";
+    }
+  }
+
+  if (sidebarBtn) sidebarBtn.addEventListener("click", () => toggleSidebar());
+  if (sidebarClose) sidebarClose.addEventListener("click", () => toggleSidebar(true));
+  if (overlay) overlay.addEventListener("click", () => toggleSidebar(true));
+
+  document.querySelectorAll("#sidebarPanel nav a").forEach(link => {
+    link.addEventListener("click", () => toggleSidebar(true));
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") toggleSidebar(true);
+  });
+
+  function updateSliderPosition(isDark) {
+    if (slider) {
+      slider.style.transform = isDark ? "translateX(30px)" : "translateX(0)";
+    }
+    if (sunIcon && moonIcon) {
+      sunIcon.style.opacity = isDark ? "1" : "0.3";
+      moonIcon.style.opacity = isDark ? "0.3" : "1";
+    }
+  }
+
+  darkToggle.addEventListener("change", (e) => {
+    const isDark = e.target.checked;
+    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateSliderPosition(isDark);
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("theme") || "light";
+    const isDark = saved === "dark";
+    document.documentElement.setAttribute("data-theme", saved);
+    darkToggle.checked = isDark;
+    updateSliderPosition(isDark);
+  });
+</script>
+<section id="section-11">
+<h2 data-i18n="section_common_title">🔁 常用控制台指令</h2>
+<ul>
+<li data-i18n="desc_allowtraits：允許將領自由分配特質（重複但補上說明）"><code>allowtraits</code>：<span data-i18n="desc_allowtraits">允許將領自由分配特質（重複但補上說明）</span></li>
+<li data-i18n="desc_manpower：增加_10m_人力（可視需要與現有項目合併）"><code>manpower</code>：<span data-i18n="desc_manpower">增加 10M 人力（可視需要與現有項目合併）</span></li>
+<li data-i18n="desc_instant_wargoal：瞬間完成正當化"><code>instant_wargoal</code>：<span data-i18n="desc_instant_wargoal">瞬間完成正當化</span></li>
+<li data-i18n="desc_allowdiplo：無條件外交，可直接宣戰"><code>allowdiplo</code>：<span data-i18n="desc_allowdiplo">無條件外交，可直接宣戰</span></li>
+<li data-i18n="desc_yesman：ai_接受所有外交提案"><code>yesman</code>：<span data-i18n="desc_yesman">AI 接受所有外交提案</span></li>
+<li data-i18n="desc_tp：部隊瞬移（teleport_的簡寫）"><code>tp</code>：<span data-i18n="desc_tp">部隊瞬移（teleport 的簡寫）</span></li>
+<li data-i18n="desc_ic：瞬間建造（等同於_instantconstruction）"><code>ic</code>：<span data-i18n="desc_ic">瞬間建造（等同於 <code>instantconstruction</code>）</span></li>
+<li data-i18n="desc_it：瞬間訓練（等同於_instanttraining）"><code>it</code>：<span data-i18n="desc_it">瞬間訓練（等同於 <code>instanttraining</code>）</span></li>
+<li data-i18n="desc_ff：無視國策限制（等同於_focus.nochecks）"><code>ff</code>：<span data-i18n="desc_ff">無視國策限制（等同於 <code>focus.nochecks</code>）</span></li>
+<li data-i18n="desc_roic：點擊科技圖示即完成研究（等同於_research_on_icon_click）"><code>roic</code>：<span data-i18n="desc_roic">點擊科技圖示即完成研究（等同於 <code>research_on_icon_click</code>）</span></li>
+</ul>
+</section>
+<section id="section-1">
+<h2 data-i18n="section_domestic">🧰 內政外交</h2>
+<ul>
+<li data-i18n="desc_add_opinion_[來源國tag]_[目標國tag]：提高或降低兩國間的好感度"><code>add_opinion [來源國tag] [目標國tag]</code>：<span data-i18n="desc_add_opinion">提高或降低兩國間的好感度</span></li>
+<li data-i18n="desc_whitepeace_[國tag]_[國tag]：雙方立即簽署白和平"><code>whitepeace [國tag] [國tag]</code>：<span data-i18n="desc_whitepeace">雙方立即簽署白和平</span></li>
+<li data-i18n="desc_observe：進入觀察模式，ai_自動控制"><code>observe</code>：<span data-i18n="desc_observe">進入觀察模式，AI 自動控制</span></li>
+<li data-i18n="desc_winwars：立即贏得當前所有戰爭"><code>winwars</code>：<span data-i18n="desc_winwars">立即贏得當前所有戰爭</span></li>
+<li data-i18n="desc_add_party_popularity_[意識形態]_[數值]：調整政黨支持度（例：d、c、f、n）"><code>add_party_popularity [意識形態] [數值]</code>：<span data-i18n="desc_add_party_popularity">調整政黨支持度（例：d、c、f、n）</span></li>
+<li data-i18n="desc_set_ruling_party_[意識形態]：設定執政黨（例：fascism）"><code>set_ruling_party [意識形態]</code>：<span data-i18n="desc_set_ruling_party">設定執政黨（例：fascism）</span></li>
+<li data-i18n="desc_tag_color_[rgb]：更改目前國家顏色（如_tag_color_255_0_0）"><code>tag_color [RGB]</code>：<span data-i18n="desc_tag_color">更改目前國家顏色（如 tag_color 255 0 0）</span></li>
+<li data-i18n="desc_instantconstruction：建築立即完成"><code>instantconstruction</code>：<span data-i18n="desc_instantconstruction">建築立即完成</span></li>
+<li data-i18n="desc_allowdiplo：無外交限制，可宣戰"><code>allowdiplo</code>：<span data-i18n="desc_allowdiplo">無外交限制，可宣戰</span></li>
+<li data-i18n="desc_focus.autocomplete：立刻完成國家方針"><code>Focus.AutoComplete</code>：<span data-i18n="desc_focus_autocomplete">立刻完成國家方針</span></li>
+<li data-i18n="desc_focus.nochecks：忽略國策前置條件"><code>focus.nochecks</code>：<span data-i18n="desc_focus_nochecks">忽略國策前置條件</span></li>
+<li data-i18n="desc_decision.nochecks：忽略決議條件"><code>decision.nochecks</code>：<span data-i18n="desc_decision_nochecks">忽略決議條件</span></li>
+<li data-i18n="desc_yesman：ai_同意所有外交提案"><code>yesman</code>：<span data-i18n="desc_yesman">AI 同意所有外交提案</span></li>
+<li data-i18n="desc_manpower：+100萬人力"><code>manpower</code>：<span data-i18n="desc_manpower">+100萬人力</span></li>
+<li data-i18n="desc_cp：+100_指揮點"><code>cp</code>：<span data-i18n="desc_cp">+100 指揮點</span></li>
+<li data-i18n="desc_ws：設定戰爭支持度"><code>ws</code>：<span data-i18n="desc_ws">設定戰爭支持度</span></li>
+<li data-i18n="desc_st：設定穩定度"><code>st</code>：<span data-i18n="desc_st">設定穩定度</span></li>
+<li data-i18n="desc_xp：+500_陸海空經驗"><code>XP</code>：<span data-i18n="desc_xp">+500 陸海空經驗</span></li>
+<li data-i18n="desc_pp：+政治點數"><code>PP</code>：<span data-i18n="desc_pp">+政治點數</span></li>
+<li data-i18n="desc_threat：增加世界緊張度"><code>threat</code>：<span data-i18n="desc_threat">增加世界緊張度</span></li>
+<li data-i18n="desc_focus.ignoreprerequisites：無視是否完成前置國策"><code>focus.ignoreprerequisites</code>：<span data-i18n="desc_focus_ignore">無視是否完成前置國策</span></li>
+<li data-i18n="desc_civilwar_[意識形態]_[國家代碼]：發動指定國家內戰"><code>civilwar [意識形態] [國家代碼]</code>：<span data-i18n="desc_civilwar">發動指定國家內戰</span></li>
+</ul>
+</section>
+<section id="section-2">
+<h2 data-i18n="section_2_title">🗺 領土控制</h2>
+<ul>
+<li data-i18n="desc_tdebug：顯示國家、省份、事件、裝備等_id（啟用/關閉切換）"><code>tdebug</code>：<span data-i18n="desc_tdebug">顯示國家、省份、事件、裝備等 ID（啟用/關閉切換）</span></li>
+<li data-i18n="desc_tag：切換控制國家"><code>tag</code>：<span data-i18n="desc_tag">切換控制國家</span></li>
+<li data-i18n="desc_add_core：增加核心領土"><code>add_core</code>：<span data-i18n="desc_add_core">增加核心領土</span></li>
+<li data-i18n="desc_annex：吞併國家"><code>annex</code>：<span data-i18n="desc_annex">吞併國家</span></li>
+<li data-i18n="desc_delall：刪除國家所有軍隊"><code>delall</code>：<span data-i18n="desc_delall">刪除國家所有軍隊</span></li>
+<li data-i18n="desc_setowner：設為該國擁有"><code>setowner</code>：<span data-i18n="desc_setowner">設為該國擁有</span></li>
+<li data-i18n="desc_setcontroller：設為該國控制"><code>setcontroller</code>：<span data-i18n="desc_setcontroller">設為該國控制</span></li>
+</ul>
+</section>
+<section id="section-3">
+<h2 data-i18n="section_3_title">🧪 科技研究</h2>
+<ul>
+<li data-i18n="desc_research_complete：完成第一欄研究"><code>research complete</code>：<span data-i18n="desc_research_complete">完成第一欄研究</span></li>
+<li data-i18n="desc_research_all：完成所有研究"><code>research all</code>：<span data-i18n="desc_research_all">完成所有研究</span></li>
+<li data-i18n="desc_research_on_icon_click：點擊完成科技"><code>research_on_icon_click</code>：<span data-i18n="desc_research_on_icon_click">點擊完成科技</span></li>
+</ul>
+</section>
+<section id="section-4">
+<h2 data-i18n="section_4_title">⚔ 戰爭部隊</h2>
+<ul>
+<li data-i18n="desc_teleport_[省份id]：將選定部隊瞬間移動到指定省份"><code>teleport [省份ID]</code>：<span data-i18n="desc_teleport">將選定部隊瞬間移動到指定省份</span></li>
+<li data-i18n="desc_spawn_[單位id]_[省id]_[數量]：在指定地點生成部隊（需啟用_-debug）"><code>spawn [單位ID] [省ID] [數量]</code>：<span data-i18n="desc_spawn">在指定地點生成部隊（需啟用 -debug）</span></li>
+<li data-i18n="desc_deleteallunits_[國tag]：刪除指定國所有軍隊"><code>deleteallunits [國tag]</code>：<span data-i18n="desc_deleteallunits">刪除指定國所有軍隊</span></li>
+<li data-i18n="desc_moveunit_[unit_id]_[province_id]：將特定單位移動至省份"><code>moveunit [unit ID] [province ID]</code>：<span data-i18n="desc_moveunit">將特定單位移動至省份</span></li>
+<li data-i18n="desc_instant_wargoal：立刻完成正當化"><code>instant_wargoal</code>：<span data-i18n="desc_instant_wargoal">立刻完成正當化</span></li>
+<li data-i18n="desc_instanttraining：部隊立即訓練完成"><code>instanttraining</code>：<span data-i18n="desc_instanttraining">部隊立即訓練完成</span></li>
+<li data-i18n="desc_instant_prepare：海軍入侵立即準備"><code>instant_prepare</code>：<span data-i18n="desc_instant_prepare">海軍入侵立即準備</span></li>
+<li data-i18n="desc_show_enemy_ships：顯示敵方艦隊"><code>show_enemy_ships</code>：<span data-i18n="desc_show_enemy_ships">顯示敵方艦隊</span></li>
+<li data-i18n="desc_bypass_invasion_superiority_check：無視制海權"><code>bypass_invasion_superiority_check</code>：<span data-i18n="desc_bypass_invasion">無視制海權</span></li>
+<li data-i18n="desc_tp：部隊瞬移"><code>tp</code>：<span data-i18n="desc_tp">部隊瞬移</span></li>
+<li data-i18n="desc_fow：去除戰爭迷霧，顯示敵方部隊"><code>fow</code>：<span data-i18n="desc_fow">去除戰爭迷霧，顯示敵方部隊</span></li>
+</ul>
+</section>
+<section id="section-5">
+<h2 data-i18n="section_5_title">🎖 將領經驗</h2>
+<ul>
+<li data-i18n="desc_allowtraits：解鎖全部將領特質"><code>allowtraits</code>：<span data-i18n="desc_allowtraits">解鎖全部將領特質</span></li>
+<li data-i18n="desc_gain_xp：增加將領經驗"><code>gain_xp</code>：<span data-i18n="desc_gain_xp">增加將領經驗</span></li>
+</ul>
+</section>
+<section id="section-6">
+<h2 data-i18n="section_6_title">🛢 資源能源</h2>
+<ul>
+<li data-i18n="desc_add_latest_equipment_[數量]：為所有已研發裝備新增指定數量"><code>add_latest_equipment [數量]</code>：<span data-i18n="desc_add_latest_equipment">為所有已研發裝備新增指定數量</span></li>
+<li data-i18n="desc_fuel：增加燃料"><code>fuel</code>：<span data-i18n="desc_fuel">增加燃料</span></li>
+<li data-i18n="desc_nukes：增加核彈"><code>nukes</code>：<span data-i18n="desc_nukes">增加核彈</span></li>
+<li data-i18n="desc_debug_nuking：可用核彈無限制"><code>debug_nuking</code>：<span data-i18n="desc_debug_nuking">可用核彈無限制</span></li>
+<li data-i18n="desc_add_mines：最大化水雷"><code>add_mines</code>：<span data-i18n="desc_add_mines">最大化水雷</span></li>
+<li data-i18n="desc_ale_[數字]：一次性獲得各類最高級裝備（不含艦船）"><code>ale [數字]</code>：<span data-i18n="desc_ale">一次性獲得各類最高級裝備（不含艦船）</span></li>
+</ul>
+</section>
+<section id="section-7">
+<h2 data-i18n="section_7_title">🕵️ 間諜特工</h2>
+<ul>
+<li data-i18n="desc_agency.instantslotunlock：立即解鎖特工槽"><code>agency.instantslotunlock</code>：<span data-i18n="desc_agency_instantslotunlock">立即解鎖特工槽</span></li>
+<li data-i18n="desc_agency.autocomplete：立即完成升級"><code>agency.autocomplete</code>：<span data-i18n="desc_agency_autocomplete">立即完成升級</span></li>
+<li data-i18n="desc_agency.instant：即刻完成行動"><code>agency.instant</code>：<span data-i18n="desc_agency_instant">即刻完成行動</span></li>
+<li data-i18n="desc_operation.instant：秒完成任務"><code>Operation.Instant</code>：<span data-i18n="desc_operation_instant">秒完成任務</span></li>
+<li data-i18n="desc_prevent_operative_detection：不被發現"><code>prevent_operative_detection</code>：<span data-i18n="desc_prevent_operative_detection">不被發現</span></li>
+<li data-i18n="desc_resistance：提高抵抗度"><code>resistance</code>：<span data-i18n="desc_resistance">提高抵抗度</span></li>
+<li data-i18n="desc_compliance：提高順從度"><code>compliance</code>：<span data-i18n="desc_compliance">提高順從度</span></li>
+</ul>
+</section>
+<section id="section-8">
+<h2 data-i18n="section_8_title">💥 隱藏指令</h2>
+<ul>
+<li data-i18n="desc_armageddon：全球核爆"><code>armageddon</code>：<span data-i18n="desc_armageddon">全球核爆</span></li>
+<li data-i18n="desc_decision.fastremove：決議只需一天"><code>Decision.FastRemove</code>：<span data-i18n="desc_decision_fastremove">決議只需一天</span></li>
+<li data-i18n="desc_sp_unlock_all：解鎖所有特殊項目"><code>sp_unlock_all</code>：<span data-i18n="desc_sp_unlock_all">解鎖所有特殊項目</span></li>
+<li data-i18n="desc_sp_research_all：研究所有特殊項目"><code>sp_research_all</code>：<span data-i18n="desc_sp_research_all">研究所有特殊項目</span></li>
+<li data-i18n="desc_sp_add_mastermind：加入頂尖科學家"><code>sp_add_mastermind</code>：<span data-i18n="desc_sp_add_mastermind">加入頂尖科學家</span></li>
+<li data-i18n="desc_sp_breakthrough_10：增加突破點"><code>sp_breakthrough 10</code>：<span data-i18n="desc_sp_breakthrough">增加突破點</span></li>
+<li data-i18n="desc_sp_available：強制可用特殊項目"><code>sp_available</code>：<span data-i18n="desc_sp_available">強制可用特殊項目</span></li>
+</ul>
+</section>
+<section id="section-9">
+<h2 data-i18n="section_9_title">🏭 工業設計</h2>
+<ul>
+<li data-i18n="desc_building_health_[建築類型]_[省/州id]_[等級]_[數值]：修改建築耐久度"><code>building_health [建築類型] [省/州ID] [等級] [數值]</code>：<span data-i18n="desc_building_health">修改建築耐久度</span></li>
+<li data-i18n="desc_add_ideas_[想法id]：加入指定國策或民族精神"><code>add_ideas [想法ID]</code>：<span data-i18n="desc_add_ideas">加入指定國策或民族精神</span></li>
+<li data-i18n="desc_industrialorganisation.addfunds_80000：+8萬設計商資金"><code>IndustrialOrganisation.AddFunds 80000</code>：<span data-i18n="desc_addfunds_80k">+8萬設計商資金</span></li>
+<li data-i18n="desc_industrialorganisation.addfunds_800000：+80萬設計商資金"><code>IndustrialOrganisation.AddFunds 800000</code>：<span data-i18n="desc_addfunds_800k">+80萬設計商資金</span></li>
+</ul>
+</section>
+<section id="section-mod-commands">
+<h2 data-i18n="section_mod_title">🧪 模組調試指令</h2>
+<ul>
+<li data-i18n="desc_spawn：模組開發常用，快速生成單位以測試平衡性或效果"><code>spawn</code>：<span data-i18n="desc_spawn_dev">模組開發常用，快速生成單位以測試平衡性或效果</span></li>
+<li data-i18n="desc_reloadtechnologies：修改科技檔後套用（不需重啟）"><code>reloadtechnologies</code>：<span data-i18n="desc_reloadtech">修改科技檔後套用（不需重啟）</span></li>
+<li data-i18n="desc_debug_terrain：觀察地形錯誤或地圖開發時使用"><code>debug_terrain</code>：<span data-i18n="desc_debug_terrain">觀察地形錯誤或地圖開發時使用</span></li>
+<li data-i18n="desc_reloadinterface：修改_ui_檔後重新載入"><code>reloadinterface</code>：<span data-i18n="desc_reloadinterface">修改 UI 檔後重新載入</span></li>
+<li data-i18n="desc_tdebug：取得_province/state_id，用於_add_core、goto_province_等"><code>tdebug</code>：<span data-i18n="desc_tdebug_dev">取得 province/state ID，用於 add_core、goto_province 等</span></li>
+<li data-i18n="desc_debug_nogui：拍攝純地圖用，關閉所有_ui"><code>debug_nogui</code>：<span data-i18n="desc_debug_nogui">拍攝純地圖用，關閉所有 UI</span></li>
+<li data-i18n="desc_reloadweather：測試天氣系統模組時使用"><code>reloadweather</code>：<span data-i18n="desc_reloadweather">測試天氣系統模組時使用</span></li>
+<li data-i18n="desc_debug_borders：確認國界顯示是否正確"><code>debug_borders</code>：<span data-i18n="desc_debug_borders">確認國界顯示是否正確</span></li>
+</ul>
+</section>
+<section id="section-ideologies">
+<h2 data-i18n="section_ideology_title">🧭 意識形態與國家、省份代碼</h2>
+<h3 data-i18n="ideology_main">📌 常用意識形態代碼</h3>
+<ul>
+<li data-i18n="desc_democratic：民主主義（民主）"><code>democratic</code>：<span data-i18n="desc_democratic">民主主義（民主）</span></li>
+<li data-i18n="desc_neutrality：中立主義（非陣營/專制）"><code>neutrality</code>：<span data-i18n="desc_neutrality">中立主義（非陣營/專制）</span></li>
+<li data-i18n="desc_fascism：法西斯主義（法西斯）"><code>fascism</code>：<span data-i18n="desc_fascism">法西斯主義（法西斯）</span></li>
+<li data-i18n="desc_communism：共產主義（共產）"><code>communism</code>：<span data-i18n="desc_communism">共產主義（共產）</span></li>
+</ul>
+<h3 data-i18n="ideology_mod">🧩 模組延伸意識形態（需模組支援）</h3>
+<ul>
+<li data-i18n="desc_anarchism：無政府主義"><code>anarchism</code>：<span data-i18n="desc_anarchism">無政府主義</span></li>
+<li data-i18n="desc_despotism：極端專制主義"><code>despotism</code>：<span data-i18n="desc_despotism">極端專制主義</span></li>
+<li data-i18n="desc_radical_socialism：激進社會主義"><code>radical_socialism</code>：<span data-i18n="desc_radical_socialism">激進社會主義</span></li>
+<li data-i18n="desc_social_liberalism：社會自由主義"><code>social_liberalism</code>：<span data-i18n="desc_social_liberalism">社會自由主義</span></li>
+<li data-i18n="desc_monarchism：君主制"><code>monarchism</code>：<span data-i18n="desc_monarchism">君主制</span></li>
+<li data-i18n="desc_technocracy：技術官僚主義"><code>technocracy</code>：<span data-i18n="desc_technocracy">技術官僚主義</span></li>
+<li data-i18n="desc_theocracy：神權統治"><code>theocracy</code>：<span data-i18n="desc_theocracy">神權統治</span></li>
+<li data-i18n="desc_reactionism：反動保守主義"><code>reactionism</code>：<span data-i18n="desc_reactionism">反動保守主義</span></li>
+</ul>
+<h3 data-i18n="ideology_tag">🌍 常用國家代碼（Tag）</h3>
+<ul>
+<li data-i18n="desc_ger：德國"><code>GER</code>：<span data-i18n="tag_GER">德國</span></li>
+<li data-i18n="desc_sov：蘇聯"><code>SOV</code>：<span data-i18n="tag_SOV">蘇聯</span></li>
+<li data-i18n="desc_eng：英國"><code>ENG</code>：<span data-i18n="tag_ENG">英國</span></li>
+<li data-i18n="desc_usa：美國"><code>USA</code>：<span data-i18n="tag_USA">美國</span></li>
+<li data-i18n="desc_fra：法國"><code>FRA</code>：<span data-i18n="tag_FRA">法國</span></li>
+<li data-i18n="desc_ita：義大利"><code>ITA</code>：<span data-i18n="tag_ITA">義大利</span></li>
+<li data-i18n="desc_jap：日本"><code>JAP</code>：<span data-i18n="tag_JAP">日本</span></li>
+<li data-i18n="desc_chi：中華民國"><code>CHI</code>：<span data-i18n="tag_CHI">中華民國</span></li>
+<li data-i18n="desc_prc：共產中國"><code>PRC</code>：<span data-i18n="tag_PRC">共產中國</span></li>
+<li data-i18n="desc_raj：印度"><code>RAJ</code>：<span data-i18n="tag_RAJ">印度</span></li>
+<li data-i18n="desc_can：加拿大"><code>CAN</code>：<span data-i18n="tag_CAN">加拿大</span></li>
+<li data-i18n="desc_aus：澳洲"><code>AUS</code>：<span data-i18n="tag_AUS">澳洲</span></li>
+<li data-i18n="desc_nzl：紐西蘭"><code>NZL</code>：<span data-i18n="tag_NZL">紐西蘭</span></li>
+<li data-i18n="desc_mex：墨西哥"><code>MEX</code>：<span data-i18n="tag_MEX">墨西哥</span></li>
+<li data-i18n="desc_bra：巴西"><code>BRA</code>：<span data-i18n="tag_BRA">巴西</span></li>
+<li data-i18n="desc_arg：阿根廷"><code>ARG</code>：<span data-i18n="tag_ARG">阿根廷</span></li>
+<li data-i18n="desc_spa：西班牙（國民軍）"><code>SPA</code>：<span data-i18n="tag_SPA">西班牙（國民軍）</span></li>
+<li data-i18n="desc_spr：西班牙（共和軍）"><code>SPR</code>：<span data-i18n="tag_SPR">西班牙（共和軍）</span></li>
+<li data-i18n="desc_tur：土耳其"><code>TUR</code>：<span data-i18n="tag_TUR">土耳其</span></li>
+<li data-i18n="desc_hun：匈牙利"><code>HUN</code>：<span data-i18n="tag_HUN">匈牙利</span></li>
+<li data-i18n="desc_rom：羅馬尼亞"><code>ROM</code>：<span data-i18n="tag_ROM">羅馬尼亞</span></li>
+<li data-i18n="desc_bul：保加利亞"><code>BUL</code>：<span data-i18n="tag_BUL">保加利亞</span></li>
+<li data-i18n="desc_gre：希臘"><code>GRE</code>：<span data-i18n="tag_GRE">希臘</span></li>
+<li data-i18n="desc_yug：南斯拉夫"><code>YUG</code>：<span data-i18n="tag_YUG">南斯拉夫</span></li>
+<li data-i18n="desc_hol：荷蘭"><code>HOL</code>：<span data-i18n="tag_HOL">荷蘭</span></li>
+<li data-i18n="desc_bel：比利時"><code>BEL</code>：<span data-i18n="tag_BEL">比利時</span></li>
+<li data-i18n="desc_lux：盧森堡"><code>LUX</code>：<span data-i18n="tag_LUX">盧森堡</span></li>
+<li data-i18n="desc_pol：波蘭"><code>POL</code>：<span data-i18n="tag_POL">波蘭</span></li>
+<li data-i18n="desc_cze：捷克斯洛伐克"><code>CZE</code>：<span data-i18n="tag_CZE">捷克斯洛伐克</span></li>
+<li data-i18n="desc_den：丹麥"><code>DEN</code>：<span data-i18n="tag_DEN">丹麥</span></li>
+<li data-i18n="desc_swe：瑞典"><code>SWE</code>：<span data-i18n="tag_SWE">瑞典</span></li>
+<li data-i18n="desc_nor：挪威"><code>NOR</code>：<span data-i18n="tag_NOR">挪威</span></li>
+<li data-i18n="desc_fin：芬蘭"><code>FIN</code>：<span data-i18n="tag_FIN">芬蘭</span></li>
+<li data-i18n="desc_por：葡萄牙"><code>POR</code>：<span data-i18n="tag_POR">葡萄牙</span></li>
+<li data-i18n="desc_swi：瑞士"><code>SWI</code>：<span data-i18n="tag_SWI">瑞士</span></li>
+</ul>
+<h3 data-i18n="ideology_province">🧭 使用省份與州 ID 的技巧</h3>
+<ul>
+<li data-i18n="desc_tdebug_啟用後，滑鼠移到地圖上會顯示_state_id_與_province_id，可搭配_add_core、teleport、goto_province_使用"><span data-i18n="desc_tdebug_province"><code>tdebug</code> 啟用後，滑鼠移到地圖上會顯示 state ID 與 province ID，可搭配 <code>add_core</code>、<code>teleport</code>、<code>goto_province</code> 使用</span></li>
+<li data-i18n="desc_goto_state_[id]：鏡頭移動到指定州"><span data-i18n="desc_goto_state"><code>goto_state [ID]</code>：鏡頭移動到指定州</span></li>
+<li data-i18n="desc_goto_province_[id]：鏡頭移動到指定省"><span data-i18n="desc_goto_province"><code>goto_province [ID]</code>：鏡頭移動到指定省</span></li>
+</ul>
+</section>
+<section id="section-map-legend">
+<h2 data-i18n="section_map_legend">🧭 地圖指令圖例</h2>
+<ul>
+<li data-i18n="desc_快捷指令提示：
+
+add_core_[省id]_[國家tag]：為某州加入核心
+teleport_[省id]：部隊瞬移
+setowner_[tag]_[省id]：設為指定國家擁有
+setcontroller_[tag]_[省id]：設為指定國家控制
+goto_state_[id]、goto_province_[id]：快速移動鏡頭至指定區域
+tdebug：顯示省州_id，與地圖層切換搭配最佳"><strong data-i18n="map_shortcuts">快捷指令提示：</strong>
+<ul>
+<li data-i18n="desc_add_core_[省id]_[國家tag]：為某州加入核心"><code>add_core [省ID] [國家Tag]</code>：<span data-i18n="desc_add_core">為某州加入核心</span></li>
+<li data-i18n="desc_teleport_[省id]：部隊瞬移"><code>teleport [省ID]</code>：<span data-i18n="desc_teleport">部隊瞬移</span></li>
+<li data-i18n="desc_setowner_[tag]_[省id]：設為指定國家擁有"><code>setowner [Tag] [省ID]</code>：<span data-i18n="desc_setowner">設為指定國家擁有</span></li>
+<li data-i18n="desc_setcontroller_[tag]_[省id]：設為指定國家控制"><code>setcontroller [Tag] [省ID]</code>：<span data-i18n="desc_setcontroller">設為指定國家控制</span></li>
+<li data-i18n="desc_goto_state_[id]、goto_province_[id]：快速移動鏡頭至指定區域"><code>goto_state [ID]</code>、<code>goto_province [ID]</code>：<span data-i18n="desc_goto">快速移動鏡頭至指定區域</span></li>
+<li data-i18n="desc_tdebug：顯示省州_id，與地圖層切換搭配最佳"><code>tdebug</code>：<span data-i18n="desc_tdebug_legend">顯示省州 ID，與地圖層切換搭配最佳</span></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="section-examples">
+<h2 data-i18n="section_examples">📘 指令使用範例</h2>
+<ul>
+<li data-i18n="desc_add_equipment_9999999_infantry_equipment_3：給自己增加_9999999_件步兵裝備_iii"><code>add_equipment 9999999 infantry_equipment_3</code>：<span data-i18n="ex_infantry">給自己增加 9999999 件步兵裝備 III</span></li>
+<li data-i18n="desc_research_all：解鎖所有科技"><code>research all</code>：<span data-i18n="ex_research_all">解鎖所有科技</span></li>
+<li data-i18n="desc_civilwar_fascism_eng：使英國發生法西斯內戰"><code>civilwar fascism ENG</code>：<span data-i18n="ex_civilwar">使英國發生法西斯內戰</span></li>
+<li data-i18n="desc_annex_ger：吞併德國"><code>annex GER</code>：<span data-i18n="ex_annex">吞併德國</span></li>
+<li data-i18n="desc_whitepeace_eng_ger：英國與德國直接簽署白和平"><code>whitepeace ENG GER</code>：<span data-i18n="ex_whitepeace">英國與德國直接簽署白和平</span></li>
+<li data-i18n="desc_tag_sov：切換控制國家為蘇聯"><code>tag SOV</code>：<span data-i18n="ex_tag">切換控制國家為蘇聯</span></li>
+<li data-i18n="desc_focus.autocomplete：開啟後將立即完成選取的任何一個國家方針"><code>Focus.AutoComplete</code>：<span data-i18n="ex_focus">開啟後將立即完成選取的任何一個國家方針</span></li>
+<li data-i18n="desc_teleport_123：將選中的部隊瞬間移動到省份_id_為_123_的地方"><code>teleport 123</code>：<span data-i18n="ex_teleport">將選中的部隊瞬間移動到省份 ID 為 123 的地方</span></li>
+</ul>
+</section>
+<section id="section-index">
+<h2 data-i18n="section_index">📑 指令分類索引</h2>
+<ul>
+<li data-i18n="desc_🧰_內政外交：_政治點數、國策、政黨、外交自由"><strong data-i18n="index_politics">🧰 內政外交：</strong> <span data-i18n="index_politics_desc">政治點數、國策、政黨、外交自由</span></li>
+<li data-i18n="desc_🗺_領土控制：_國家控制權、省份_id、核心、佔領"><strong data-i18n="index_territory">🗺 領土控制：</strong> <span data-i18n="index_territory_desc">國家控制權、省份 ID、核心、佔領</span></li>
+<li data-i18n="desc_🧪_科技研究：_瞬間完成研究、強制解鎖裝備"><strong data-i18n="index_research">🧪 科技研究：</strong> <span data-i18n="index_research_desc">瞬間完成研究、強制解鎖裝備</span></li>
+<li data-i18n="desc_⚔_戰爭部隊：_瞬移、編制、訓練、正當化、海軍入侵"><strong data-i18n="index_warfare">⚔ 戰爭部隊：</strong> <span data-i18n="index_warfare_desc">瞬移、編制、訓練、正當化、海軍入侵</span></li>
+<li data-i18n="desc_🎖_將領經驗：_指揮官經驗、特質解除限制"><strong data-i18n="index_generals">🎖 將領經驗：</strong> <span data-i18n="index_generals_desc">指揮官經驗、特質解除限制</span></li>
+<li data-i18n="desc_🛢_資源能源：_人力、燃料、核彈、水雷、生產裝備"><strong data-i18n="index_resources">🛢 資源能源：</strong> <span data-i18n="index_resources_desc">人力、燃料、核彈、水雷、生產裝備</span></li>
+<li data-i18n="desc_🕵️_間諜特工：_情報網、間諜指令、順從度、抵抗度"><strong data-i18n="index_spies">🕵️ 間諜特工：</strong> <span data-i18n="index_spies_desc">情報網、間諜指令、順從度、抵抗度</span></li>
+<li data-i18n="desc_💥_隱藏指令：_世界核爆、debug、特殊功能指令"><strong data-i18n="index_hidden">💥 隱藏指令：</strong> <span data-i18n="index_hidden_desc">世界核爆、debug、特殊功能指令</span></li>
+<li data-i18n="desc_🏭_工業設計：_設計商資金、建築耐久、想法與_reload"><strong data-i18n="index_industry">🏭 工業設計：</strong> <span data-i18n="index_industry_desc">設計商資金、建築耐久、想法與 reload</span></li>
+<li data-i18n="desc_🔢_裝備速查表：_分類裝備與生成指令（支援搜尋與分類）"><strong data-i18n="index_equipment">🔢 裝備速查表：</strong> <span data-i18n="index_equipment_desc">分類裝備與生成指令（支援搜尋與分類）</span></li>
+<li data-i18n="desc_🧪_模組需求：_-debug：需啟用才能使用的指令如_spawn、instant_prepare_等"><strong data-i18n="index_debug">🧪 模組需求：</strong> <code>-debug</code>：<span data-i18n="index_debug_desc">需啟用才能使用的指令如 <code>spawn</code>、<code>instant_prepare</code> 等</span></li>
+</ul>
+</section>
+<!-- ►► 裝備代碼速查表 ◄◄ -->
+<section id="section-10">
+<h2 data-i18n="section_equipment_table">🔢 裝備代碼速查表</h2>
+<p data-i18n="equipment_table_desc">
+    下列表格列出常見裝備及其控制台指令，可供查詢與複製：
+  </p>
+<label for="filterSelect">
+<strong data-i18n="equipment_filter">分類篩選：</strong>
+</label>
+<select id="filterSelect" style="margin-bottom:1rem;padding:0.3rem;border-radius:4px;">
+<option data-i18n="filter_all" value="">全部</option>
+<option data-i18n="filter_infantry" value="infantry">步兵</option>
+<option data-i18n="filter_tank" value="tank">坦克</option>
+<option data-i18n="filter_plane" value="plane">飛機</option>
+<option data-i18n="filter_ship" value="ship">艦艇</option>
+<option data-i18n="filter_supply" value="supply">補給</option>
+</select>
+<div style="overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;">
+<thead>
+<tr style="background:#b2dfdb;">
+<th data-i18n="table_category" style="padding:8px;border:1px solid #ccc;text-align:left;">分類</th>
+<th data-i18n="table_name" style="padding:8px;border:1px solid #ccc;text-align:left;">裝備名稱</th>
+<th data-i18n="table_command" style="padding:8px;border:1px solid #ccc;text-align:left;">控制台指令</th>
+</tr>
+</thead>
+<tbody>
+<!-- 步兵 -->
+<tr data-category="infantry">
+<td data-i18n="eqtype_infantry">步兵</td>
+<td data-i18n="eqname_infantry_3">步兵裝備 III</td>
+<td><code>add_equipment 9999999 infantry_equipment_3</code></td>
+</tr>
+<tr data-category="infantry">
+<td data-i18n="eqtype_infantry">步兵</td>
+<td data-i18n="eqname_support">支援裝備</td>
+<td><code>add_equipment 9999999 support_equipment_1</code></td>
+</tr>
+<tr data-category="infantry">
+<td data-i18n="eqtype_infantry">步兵</td>
+<td data-i18n="eqname_artillery">火砲 III</td>
+<td><code>add_equipment 9999999 artillery_equipment_3</code></td>
+</tr>
+<tr data-category="infantry">
+<td data-i18n="eqtype_infantry">步兵</td>
+<td data-i18n="eqname_at">反坦克炮 III</td>
+<td><code>add_equipment 9999999 anti_tank_equipment_3</code></td>
+</tr>
+<tr data-category="infantry">
+<td data-i18n="eqtype_infantry">步兵</td>
+<td data-i18n="eqname_aa">防空炮 III</td>
+<td><code>add_equipment 9999999 anti_air_equipment_3</code></td>
+</tr>
+<!-- 坦克 -->
+<tr data-category="tank">
+<td data-i18n="eqtype_tank">坦克</td>
+<td data-i18n="eqname_lt3">輕型坦克 III</td>
+<td><code>add_equipment 9999999 light_tank_equipment_3</code></td>
+</tr>
+<tr data-category="tank">
+<td data-i18n="eqtype_tank">坦克</td>
+<td data-i18n="eqname_mt3">中型坦克 III</td>
+<td><code>add_equipment 9999999 medium_tank_equipment_3</code></td>
+</tr>
+<tr data-category="tank">
+<td data-i18n="eqtype_tank">坦克</td>
+<td data-i18n="eqname_ht3">重型坦克 III</td>
+<td><code>add_equipment 9999999 heavy_tank_equipment_3</code></td>
+</tr>
+<tr data-category="tank">
+<td data-i18n="eqtype_tank">坦克</td>
+<td data-i18n="eqname_modern">現代坦克</td>
+<td><code>add_equipment 9999999 modern_tank_equipment_1</code></td>
+</tr>
+<!-- 飛機 -->
+<tr data-category="plane">
+<td data-i18n="eqtype_plane">飛機</td>
+<td data-i18n="eqname_fighter">戰鬥機 III</td>
+<td><code>add_equipment 9999999 fighter_equipment_3</code></td>
+</tr>
+<tr data-category="plane">
+<td data-i18n="eqtype_plane">飛機</td>
+<td data-i18n="eqname_stratbomber">戰略轟炸機 III</td>
+<td><code>add_equipment 9999999 strat_bomber_equipment_3</code></td>
+</tr>
+<tr data-category="plane">
+<td data-i18n="eqtype_plane">飛機</td>
+<td data-i18n="eqname_cas">近距支援機 III</td>
+<td><code>add_equipment 9999999 CAS_equipment_3</code></td>
+</tr>
+<tr data-category="plane">
+<td data-i18n="eqtype_plane">飛機</td>
+<td data-i18n="eqname_transport">運輸機</td>
+<td><code>add_equipment 9999999 transport_plane_equipment_1</code></td>
+</tr>
+<tr data-category="plane">
+<td data-i18n="eqtype_plane">飛機</td>
+<td data-i18n="eqname_jet">噴射戰鬥機 II</td>
+<td><code>add_equipment 9999999 jet_fighter_equipment_2</code></td>
+</tr>
+<!-- 艦艇 -->
+<tr data-category="ship">
+<td data-i18n="eqtype_ship">艦艇</td>
+<td data-i18n="eqname_destroyer">驅逐艦 IV</td>
+<td><code>add_equipment 9999999 destroyer_4</code></td>
+</tr>
+<tr data-category="ship">
+<td data-i18n="eqtype_ship">艦艇</td>
+<td data-i18n="eqname_sub">潛艦 IV</td>
+<td><code>add_equipment 9999999 submarine_4</code></td>
+</tr>
+<tr data-category="ship">
+<td data-i18n="eqtype_ship">艦艇</td>
+<td data-i18n="eqname_carrier">航空母艦 IV</td>
+<td><code>add_equipment 9999999 carrier_4</code></td>
+</tr>
+<!-- 補給 -->
+<tr data-category="supply">
+<td data-i18n="eqtype_supply">補給</td>
+<td data-i18n="eqname_train">火車</td>
+<td><code>add_equipment 9999999 train_equipment_1</code></td>
+</tr>
+<tr data-category="supply">
+<td data-i18n="eqtype_supply">補給</td>
+<td data-i18n="eqname_railgun">鐵道砲</td>
+<td><code>add_equipment 9999999 rail_way_gun_equipment</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑ 回到頂部</button>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 初始化常數與變數
+      const filterSelect = document.getElementById('filterSelect');
+      const rows = document.querySelectorAll('#section-10 tbody tr');
+      const searchBox = document.getElementById('searchBox');
+      const langSelector = document.getElementById('language-select');
+      const html = document.documentElement;
+      const darkBtn = document.querySelector('.dark-btn');
+      
+      let currentLanguage = localStorage.getItem('selectedLanguage') || 'zh';
+    
+      // 設定語言
+      function setLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem('selectedLanguage', lang);
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (baseDescriptions[key] && baseDescriptions[key][lang]) {
+            el.textContent = baseDescriptions[key][lang];
+          }
+        });
+      }
+    
+      // 初始化語言
+      langSelector.value = currentLanguage;
+      setLanguage(currentLanguage);
+    
+      langSelector.addEventListener('change', (e) => {
+        setLanguage(e.target.value);
+      });
+    
+      // 深色模式初始化
+      function setTheme(theme) {
+        localStorage.setItem('theme', theme);
+        if (theme === 'dark') {
+          html.setAttribute('data-theme', 'dark');
+          darkBtn.textContent = '🌙';
+        } else {
+          html.removeAttribute('data-theme');
+          darkBtn.textContent = '☀';
+        }
+      }
+    
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      setTheme(savedTheme);
+    
+      // 深色模式切換
+      darkBtn.addEventListener('click', () => {
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        setTheme(isDark ? 'light' : 'dark');
+      });
+    
+      // 分類篩選功能
+      function filterEquipment(category) {
+        rows.forEach(row => {
+          const cat = row.getAttribute('data-category');
+          row.style.display = (!category || cat === category) ? '' : 'none';
+        });
+    
+        document.getElementById('equipment-section').style.display = '';
+      }
+    
+      filterEquipment('');
+    
+      filterSelect.addEventListener('change', (e) => {
+        filterEquipment(e.target.value);
+      });
+    
+      // 建立 li 原始內容快取（避免搜尋高亮重複標記）
+      const liOriginalMap = new Map();
+      document.querySelectorAll('section li').forEach(li => {
+        liOriginalMap.set(li, li.innerHTML);
+      });
+    
+      // 搜尋與高亮函式 (li + tr 通用)
+      function performSearch(keyword) {
+        keyword = keyword.trim().toLowerCase();
+    
+        // 處理 li 項目
+        document.querySelectorAll('section').forEach(section => {
+          let sectionMatch = false;
+          section.querySelectorAll('li').forEach(li => {
+            const original = liOriginalMap.get(li);
+            const text = original.toLowerCase();
+    
+            if (!keyword || text.includes(keyword)) {
+              li.innerHTML = original.replace(new RegExp(`(${keyword})`, 'gi'), '<mark>$1</mark>');
+              li.style.display = '';
+              sectionMatch = true;
+            } else {
+              li.style.display = 'none';
+            }
+          });
+          section.style.display = sectionMatch ? '' : 'none';
+        });
+    
+        // 處理 table rows (裝備代碼)
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          row.style.display = (!keyword || text.includes(keyword)) ? '' : 'none';
+        });
+    
+        // 確保裝備區塊不消失
+        document.getElementById('equipment-section').style.display = '';
+      }
+    
+      // 搜尋框事件
+      searchBox.addEventListener('input', function() {
+        performSearch(this.value);
+      });
+    
+      searchBox.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          performSearch(this.value);
+        }
+      });
+    
+      // 地圖按鈕高亮
+      const mapButtons = document.querySelectorAll('#mapControls button');
+      mapButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+          mapButtons.forEach(b => b.style.outline = 'none');
+          this.style.outline = '3px solid gold';
+        });
+      });
+    
+      // 快捷鍵提示（Console）
+      document.addEventListener('keydown', function(e) {
+        if (e.key === '+') console.log('提示：Ctrl + 滾輪 放大地圖');
+        if (e.key === '-') console.log('提示：Ctrl + 滾輪 縮小地圖');
+      });
+    
+      // 返回頂部按鈕顯示
+      window.addEventListener('scroll', function () {
+        document.getElementById('backToTop').style.display = window.scrollY > 300 ? 'block' : 'none';
+      });
+    });
+    </script>
+
+
+<footer style="text-align:center; font-size: 0.85rem; margin-top: 4rem; opacity: 0.75; padding: 1.5rem 1rem; border-top: 1px solid #ccc; background: #f7f7f7;">
+<p data-i18n="footer_notice">本網站為 HOI4 玩家社群自製參考工具，非 Paradox Interactive 官方產品。</p>
+<p data-i18n="footer_trademark"></p></p>
+<p data-i18n="footer_contact"></p></p>
+<p><span data-i18n="footer_github"></span>：<a href="https://github.com/你的帳號/hoi4-console-helper" style="color:#00796b; text-decoration:underline;" target="_blank">前往 GitHub</a></p>
+<p>© 2025 HOI4 Command Toolbox</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterSelect = document.getElementById('filterSelect');
+    const searchBox = document.getElementById('searchBox');
+    const rows = document.querySelectorAll('#section-10 tbody tr');
+
+    function filterEquipment(category) {
+      rows.forEach(row => {
+        const cat = row.dataset.category;
+        row.style.display = (category === '' || cat === category) ? 'table-row' : 'none';
+      });
+    }
+
+    // 分類篩選
+    filterSelect.addEventListener('change', e => {
+      filterEquipment(e.target.value);
+    });
+
+    // 搜尋功能
+    searchBox.addEventListener('input', () => {
+      const keyword = searchBox.value.trim().toLowerCase();
+      rows.forEach(row => {
+        row.style.display = row.textContent.toLowerCase().includes(keyword) ? '' : 'none';
+      });
+    });
+
+    // 按 Enter 鍵也觸發 input 搜尋
+    searchBox.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        this.dispatchEvent(new Event('input'));
+      }
+    });
+
+    // 初始化顯示全部
+    filterEquipment('');
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBox = document.getElementById("searchBox");
+  const sections = document.querySelectorAll("section[id^='section-']:not(#section-10)"); // 排除裝備代碼表
+
+  const liOriginalMap = new Map();
+  sections.forEach(section => {
+    section.querySelectorAll("li").forEach(li => {
+      liOriginalMap.set(li, li.innerHTML);
+    });
+  });
+
+  function performSearch(keyword) {
+    keyword = keyword.trim().toLowerCase();
+    sections.forEach(section => {
+      let sectionMatch = false;
+      section.querySelectorAll("li").forEach(li => {
+        const original = liOriginalMap.get(li);
+        const text = li.textContent.toLowerCase();
+        if (keyword === "" || text.includes(keyword)) {
+          li.innerHTML = original;
+          li.style.display = "";
+          sectionMatch = true;
+        } else {
+          li.style.display = "none";
+        }
+      });
+      section.style.display = sectionMatch ? "block" : "none";
+    });
+  }
+
+  searchBox.addEventListener("input", () => performSearch(searchBox.value));
+  searchBox.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      performSearch(searchBox.value);
+    }
+  });
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBox = document.getElementById("searchBox");
+  const langSelector = document.getElementById("language-select");
+  let currentLang = localStorage.getItem("selectedLanguage") || "zh";
+
+  // 每個 <li> 儲存原始 key
+  const liOriginalMap = new Map();
+  document.querySelectorAll("section li[data-i18n]").forEach(li => {
+    const key = li.getAttribute("data-i18n");
+    liOriginalMap.set(li, key);
+  });
+
+  function performSearch(keyword) {
+    keyword = keyword.trim().toLowerCase();
+    const sections = document.querySelectorAll("section[id^='section-']:not(#section-10)");
+    sections.forEach(section => {
+      let sectionMatch = false;
+      section.querySelectorAll("li[data-i18n]").forEach(li => {
+        const key = liOriginalMap.get(li);
+        const text = baseDescriptions[key] && baseDescriptions[key][currentLang] ? baseDescriptions[key][currentLang].toLowerCase() : "";
+        if (keyword === "" || text.includes(keyword) || key.includes(keyword)) {
+          li.textContent = baseDescriptions[key][currentLang] || key;
+          li.style.display = "";
+          sectionMatch = true;
+        } else {
+          li.style.display = "none";
+        }
+      });
+      section.style.display = sectionMatch ? "block" : "none";
+    });
+  }
+
+  // 語言切換時更新 currentLang
+  langSelector.addEventListener("change", e => {
+    currentLang = e.target.value;
+    localStorage.setItem("selectedLanguage", currentLang);
+    performSearch(searchBox.value); // 即時重新顯示語系切換後的結果
+  });
+
+  searchBox.addEventListener("input", () => performSearch(searchBox.value));
+  searchBox.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      performSearch(searchBox.value);
+    }
+  });
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBox = document.getElementById("searchBox");
+  const langSelector = document.getElementById("language-select");
+  let currentLang = localStorage.getItem("selectedLanguage") || "zh";
+
+  // 建立對每個 li 的 key 對應表
+  const liOriginalMap = new Map();
+  document.querySelectorAll("section li[data-i18n]").forEach(li => {
+    const key = li.getAttribute("data-i18n");
+    liOriginalMap.set(li, key);
+  });
+
+  function performSearch(keyword) {
+    keyword = keyword.trim().toLowerCase();
+    const sections = document.querySelectorAll("section[id^='section-']:not(#section-10)");
+    sections.forEach(section => {
+      let sectionMatch = false;
+      section.querySelectorAll("li[data-i18n]").forEach(li => {
+        const key = liOriginalMap.get(li);
+        const content = baseDescriptions[key] && baseDescriptions[key][currentLang] ? baseDescriptions[key][currentLang] : key;
+        const match = content.toLowerCase().includes(keyword) || key.toLowerCase().includes(keyword);
+        li.textContent = content;
+        li.style.display = match ? "" : "none";
+        if (match) sectionMatch = true;
+      });
+      section.style.display = sectionMatch ? "" : "none";
+    });
+  }
+
+  langSelector.addEventListener("change", e => {
+    currentLang = e.target.value;
+    localStorage.setItem("selectedLanguage", currentLang);
+    performSearch(searchBox.value);
+  });
+
+  searchBox.addEventListener("input", () => performSearch(searchBox.value));
+  searchBox.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      performSearch(searchBox.value);
+    }
+  });
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBox = document.getElementById("searchBox");
+  const langSelector = document.getElementById("language-select");
+  let currentLang = localStorage.getItem("selectedLanguage") || "zh";
+
+  function applyLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (baseDescriptions[key] && baseDescriptions[key][lang]) {
+        el.textContent = baseDescriptions[key][lang];
+      }
+    });
+  }
+
+  function performSearch(keyword) {
+    keyword = keyword.trim().toLowerCase();
+    const sections = document.querySelectorAll("section[id^='section-']:not(#section-10)");
+
+    sections.forEach(section => {
+      let sectionMatch = false;
+      section.querySelectorAll("li[data-i18n]").forEach(li => {
+        const key = li.getAttribute("data-i18n");
+        const content = baseDescriptions[key] && baseDescriptions[key][currentLang] ? baseDescriptions[key][currentLang] : key;
+        const isMatch = content.toLowerCase().includes(keyword) || key.toLowerCase().includes(keyword);
+
+        li.textContent = content;
+        li.style.display = isMatch ? "" : "none";
+        if (isMatch) sectionMatch = true;
+      });
+      section.style.display = sectionMatch ? "" : "none";
+    });
+
+    applyLanguage(currentLang);
+  }
+
+  langSelector.addEventListener("change", (e) => {
+    currentLang = e.target.value;
+    localStorage.setItem("selectedLanguage", currentLang);
+    applyLanguage(currentLang);
+    performSearch(searchBox.value);
+  });
+
+  searchBox.addEventListener("input", () => performSearch(searchBox.value));
+  searchBox.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      performSearch(searchBox.value);
+    }
+  });
+
+  applyLanguage(currentLang);
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBox = document.getElementById("searchBox");
+  const langSelector = document.getElementById("language-select");
+  let currentLang = localStorage.getItem("selectedLanguage") || "zh";
+
+  function applyLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (baseDescriptions[key] && baseDescriptions[key][lang]) {
+        el.textContent = baseDescriptions[key][lang];
+      }
+    });
+  }
+
+  function performSearch(keyword) {
+    keyword = keyword.trim().toLowerCase();
+    const sections = document.querySelectorAll("section[id^='section-']:not(#section-10)");
+    sections.forEach(section => {
+      let sectionMatch = false;
+      section.querySelectorAll("li[data-i18n]").forEach(li => {
+        const key = li.getAttribute("data-i18n");
+        const content = baseDescriptions[key] && baseDescriptions[key][currentLang] ? baseDescriptions[key][currentLang] : key;
+        const isMatch = content.toLowerCase().includes(keyword) || key.toLowerCase().includes(keyword);
+
+        li.textContent = content;
+        li.style.display = isMatch ? "" : "none";
+        if (isMatch) sectionMatch = true;
+      });
+      section.style.display = sectionMatch ? "" : "none";
+    });
+
+    // 強制重新刷新語言內容，避免搜尋結果套用錯誤語言
+    applyLanguage(currentLang);
+  }
+
+  langSelector.addEventListener("change", (e) => {
+    currentLang = e.target.value;
+    localStorage.setItem("selectedLanguage", currentLang);
+    applyLanguage(currentLang);
+    performSearch(searchBox.value);
+  });
+
+  searchBox.addEventListener("input", () => performSearch(searchBox.value));
+  searchBox.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      performSearch(searchBox.value);
+    }
+  });
+
+  // 初次載入同步語言
+  applyLanguage(currentLang);
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBox = document.getElementById("searchBox");
+  const langSelector = document.getElementById("language-select");
+  let currentLang = localStorage.getItem("selectedLanguage") || "zh";
+
+  function applyLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (baseDescriptions[key] && baseDescriptions[key][lang]) {
+        el.textContent = baseDescriptions[key][lang];
+      }
+    });
+  }
+
+  function performSearch(keyword) {
+    keyword = keyword.trim().toLowerCase();
+    const sections = document.querySelectorAll("section[id^='section-']:not(#section-10)");
+
+    sections.forEach(section => {
+      let sectionMatch = false;
+      section.querySelectorAll("li[data-i18n]").forEach(li => {
+        const key = li.getAttribute("data-i18n");
+        const content = baseDescriptions[key] && baseDescriptions[key][currentLang] ? baseDescriptions[key][currentLang] : key;
+        const isMatch = content.toLowerCase().includes(keyword) || key.toLowerCase().includes(keyword);
+
+        li.textContent = content;
+        li.style.display = isMatch ? "" : "none";
+        if (isMatch) sectionMatch = true;
+      });
+      section.style.display = sectionMatch ? "" : "none";
+    });
+
+    // 刷新語系流程：先套用繁體中文再套用使用者語言
+    applyLanguage("zh");
+    setTimeout(() => applyLanguage(currentLang), 0);
+  }
+
+  langSelector.addEventListener("change", (e) => {
+    currentLang = e.target.value;
+    localStorage.setItem("selectedLanguage", currentLang);
+    applyLanguage(currentLang);
+    performSearch(searchBox.value);
+  });
+
+  searchBox.addEventListener("input", () => performSearch(searchBox.value));
+  searchBox.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      performSearch(searchBox.value);
+    }
+  });
+
+  // 初始渲染
+  applyLanguage(currentLang);
+});
+</script></body>
+</html>
