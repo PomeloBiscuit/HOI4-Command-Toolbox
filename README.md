@@ -7,7 +7,6 @@
 ### 功能特色
 - 🎮 收錄上百條常用控制台指令與說明
 - 🧰 裝備代碼分類速查（步兵、坦克、飛機等）
-- 🗺️ 互動式地圖嵌入，點擊即可查詢省份 ID／州 ID
 - 🌙 深色模式一鍵切換，支援偏好記憶
 - 🌐 多語言介面切換（自動偵測、手動選擇）
 - 🔎 即時關鍵字搜尋，快速查找目標指令
@@ -39,7 +38,6 @@ This is a command reference tool designed for players of Hearts of Iron IV (HOI4
 ### Features
 - 🎮 Includes hundreds of commonly used console commands with explanations
 - 🧰 Categorized equipment code lookup (Infantry, Tanks, Aircraft, etc.)
-- 🗺️ Embedded interactive map — click to view Province IDs / State IDs
 - 🌙 One-click dark mode toggle with preference memory
 - 🌐 Multilingual interface (auto-detection and manual selection supported)
 - 🔎 Real-time keyword search for quick command filtering
@@ -72,7 +70,6 @@ This is a command reference tool designed for players of Hearts of Iron IV (HOI4
 ### 主な機能
 - 🎮 数百の一般的なコンソールコマンドとその説明を収録
 - 🧰 装備コードをカテゴリ別にすばやく検索（歩兵、戦車、航空機など）
-- 🗺️ インタラクティブマップを埋め込み、クリックで州／プロヴィンス ID を確認可能
 - 🌙 ワンクリックでダークモードに切り替え、設定を記憶
 - 🌐 多言語インターフェース（自動検出と手動選択をサポート）
 - 🔎 キーワードによるリアルタイム検索機能で迅速に目的のコマンドを検索
@@ -105,7 +102,6 @@ This is a command reference tool designed for players of Hearts of Iron IV (HOI4
 ### 주요 기능
 - 🎮 수백 개의 자주 사용하는 콘솔 명령어와 설명 수록
 - 🧰 장비 코드를 범주별로 빠르게 조회 (보병, 전차, 항공기 등)
-- 🗺️ 인터랙티브 맵을 삽입하여 클릭으로 주/지방 ID 확인 가능
 - 🌙 클릭 한 번으로 다크 모드 전환, 사용자 설정 기억
 - 🌐 다국어 인터페이스 지원 (자동 감지 및 수동 선택 가능)
 - 🔎 실시간 키워드 검색으로 원하는 명령어를 빠르게 찾기
@@ -138,7 +134,6 @@ Esta es una herramienta de referencia de comandos diseñada para jugadores de He
 ### Características
 - 🎮 Incluye cientos de comandos de consola comunes con explicaciones
 - 🧰 Búsqueda rápida de códigos de equipo clasificados (infantería, tanques, aviones, etc.)
-- 🗺️ Mapa interactivo incrustado: haz clic para ver ID de provincias/estados
 - 🌙 Cambio rápido al modo oscuro con memoria de preferencias
 - 🌐 Interfaz multilingüe (detección automática y selección manual)
 - 🔎 Búsqueda en tiempo real para encontrar rápidamente comandos
@@ -171,7 +166,6 @@ Esta é uma ferramenta de referência de comandos desenvolvida para jogadores de
 ### Funcionalidades
 - 🎮 Inclui centenas de comandos de console com explicações
 - 🧰 Pesquisa rápida por códigos de equipamento organizados por categoria (infantaria, tanques, aviões, etc.)
-- 🗺️ Mapa interativo incorporado — clique para ver IDs de província/estado
 - 🌙 Alternância rápida para modo escuro com memória de preferências
 - 🌐 Interface multilíngue (com detecção automática e seleção manual)
 - 🔎 Pesquisa em tempo real para localizar rapidamente comandos
@@ -204,7 +198,6 @@ Esta é uma ferramenta de referência de comandos desenvolvida para jogadores de
 ### Возможности
 - 🎮 Содержит сотни популярных консольных команд с пояснениями
 - 🧰 Быстрый поиск кодов снаряжения по категориям (пехота, танки, авиация и др.)
-- 🗺️ Встроенная интерактивная карта — нажмите для просмотра ID провинции/штата
 - 🌙 Переключение на тёмную тему одним щелчком, с запоминанием настроек
 - 🌐 Многоязычный интерфейс (поддержка автоопределения и ручного выбора)
 - 🔎 Мгновенный поиск по ключевым словам для быстрой фильтрации команд
