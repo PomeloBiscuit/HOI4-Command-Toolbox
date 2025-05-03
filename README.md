@@ -1,8 +1,7 @@
-
 # 鋼鐵雄心4 指令工具箱 | HOI4 Command Toolbox
 
 ## 🌟 繁體中文
-這是一款為《鋼鐵雄心4（Hearts of Iron IV）》玩家打造的指令查詢工具，整合遊戲中常用的 Console 指令、裝備代碼與互動式地圖連結，並支援深色模式與多語言切換，提供最佳的查詢體驗。
+這是一款為《鋼鐵雄心4（Hearts of Iron IV）》玩家打造的指令查詢工具，整合遊戲中常用的 Console 指令、裝備代碼，並支援深色模式與多語言切換，提供最佳的查詢體驗。
 
 ### 功能特色
 - 🎮 收錄上百條常用控制台指令與說明
@@ -30,10 +29,8 @@
 
 ---
 
-
 ## 🌐 English
-
-This is a command reference tool designed for players of Hearts of Iron IV (HOI4). It integrates commonly used console commands, equipment codes, and interactive map links. The tool supports dark mode and multilingual switching, offering the best lookup experience.
+This is a command reference tool designed for Hearts of Iron IV (HOI4) players. It integrates commonly used console commands and equipment codes, supporting dark mode and multilingual switching to provide the best lookup experience.
 
 ### Features
 - 🎮 Includes hundreds of commonly used console commands with explanations
@@ -52,27 +49,24 @@ This is a command reference tool designed for players of Hearts of Iron IV (HOI4
 - This project is a fan-made reference tool created by the HOI4 player community and is not an official product of Paradox Interactive.
 - Hearts of Iron IV and its related names are registered trademarks of Paradox Interactive AB.
 - This site does not use any original game materials, images, or music. It is intended solely for educational and research purposes.
-- If you have any copyright concerns, please contact the project maintainer — we will respond and comply accordingly.
+- If you have any copyright concerns, please contact the project maintainer — we will respond accordingly.
 
 ### Contributions & Feedback
-- Submit pull requests to fix bugs or improve features
+- Submit Pull Requests to fix bugs or improve features
 - Use the Issues tab to suggest ideas or report problems
-- Share this tool with other Hearts of Iron enthusiasts!
-
+- Share this tool with other HOI4 enthusiasts!
 
 ---
 
-
 ## 🇯🇵 日本語
-
-これは『Hearts of Iron IV（HOI4）』プレイヤー向けに設計されたコマンド参照ツールです。よく使われるコンソールコマンド、装備コード、インタラクティブマップリンクを統合しています。ダークモードと多言語切り替えをサポートし、最適な検索体験を提供します。
+これは『Hearts of Iron IV（HOI4）』プレイヤー向けに設計されたコマンド参照ツールです。よく使われるコンソールコマンドと装備コードを統合し、ダークモードと多言語切り替えをサポートして、最適な検索体験を提供します。
 
 ### 主な機能
-- 🎮 数百の一般的なコンソールコマンドとその説明を収録
+- 🎮 一般的なコンソールコマンドとその説明を数百収録
 - 🧰 装備コードをカテゴリ別にすばやく検索（歩兵、戦車、航空機など）
 - 🌙 ワンクリックでダークモードに切り替え、設定を記憶
 - 🌐 多言語インターフェース（自動検出と手動選択をサポート）
-- 🔎 キーワードによるリアルタイム検索機能で迅速に目的のコマンドを検索
+- 🔎 キーワードによるリアルタイム検索機能
 
 ### 使い方
 1. GitHub Pages サイトを開くか、`HOI4 Console Command.html` を直接開きます
@@ -91,13 +85,10 @@ This is a command reference tool designed for players of Hearts of Iron IV (HOI4
 - Issues タブから提案や問題報告が可能です
 - 本ツールを他の HOI4 ファンにもぜひシェアしてください！
 
-
 ---
 
-
 ## 🇰🇷 한국어
-
-이 도구는 Hearts of Iron IV (HOI4) 플레이어를 위한 명령어 참조 도구입니다. 자주 사용하는 콘솔 명령어, 장비 코드, 그리고 인터랙티브 맵 링크를 통합하여 제공합니다. 다크 모드 및 다국어 전환 기능을 지원하여 최고의 검색 경험을 제공합니다.
+이 도구는 Hearts of Iron IV (HOI4) 플레이어를 위한 명령어 참조 도구입니다. 자주 사용하는 콘솔 명령어와 장비 코드를 통합하여 제공하며, 다크 모드 및 다국어 전환을 지원하여 최고의 검색 경험을 제공합니다。
 
 ### 주요 기능
 - 🎮 수백 개의 자주 사용하는 콘솔 명령어와 설명 수록
@@ -121,15 +112,12 @@ This is a command reference tool designed for players of Hearts of Iron IV (HOI4
 ### 기여 및 피드백
 - 버그 수정 또는 기능 개선을 위한 Pull Request를 환영합니다
 - Issues 탭에서 제안 또는 문제를 제보해 주세요
-- 이 도구를 다른 HOI4 팬들과 공유해 주세요!
-
+- 이 도구를 다른 HOI4 팬들과 공유해 주세요！
 
 ---
 
-
 ## 🇪🇸 Español
-
-Esta es una herramienta de referencia de comandos diseñada para jugadores de Hearts of Iron IV (HOI4). Integra los comandos de consola más utilizados, códigos de equipo y enlaces a mapas interactivos. La herramienta admite modo oscuro y cambio de idioma, ofreciendo la mejor experiencia de búsqueda.
+Esta es una herramienta de referencia de comandos diseñada para jugadores de Hearts of Iron IV (HOI4). Integra los comandos de consola más utilizados y códigos de equipo. La herramienta admite modo oscuro y cambio de idioma para una mejor experiencia.
 
 ### Características
 - 🎮 Incluye cientos de comandos de consola comunes con explicaciones
@@ -142,7 +130,7 @@ Esta es una herramienta de referencia de comandos diseñada para jugadores de He
 1. Abre el sitio de GitHub Pages o ejecuta directamente `HOI4 Console Command.html` después de descargarlo
 2. Usa la navegación para saltar a una categoría de comandos
 3. Introduce palabras clave para filtrar rápidamente los resultados
-4. Usa los botones en la esquina superior derecha para cambiar el idioma o el tema
+4. Usa los botones en la esquina superior derecha para cambiar idioma o tema
 
 ### Descargo de responsabilidad
 - Este proyecto es una herramienta de referencia creada por la comunidad de jugadores de HOI4 y no es un producto oficial de Paradox Interactive.
@@ -153,15 +141,12 @@ Esta es una herramienta de referencia de comandos diseñada para jugadores de He
 ### Contribuciones y comentarios
 - Envíe Pull Requests para corregir errores o mejorar funciones
 - Utiliza la pestaña Issues para sugerencias o reportes
-- ¡Comparte esta herramienta con otros fanáticos de HOI4!
-
+- ¡Comparte esta herramienta con otros fanáticos de HOI4！
 
 ---
 
-
 ## 🇵🇹 Português
-
-Esta é uma ferramenta de referência de comandos desenvolvida para jogadores de Hearts of Iron IV (HOI4). Ela integra comandos de console comuns, códigos de equipamento e links de mapas interativos. A ferramenta oferece suporte ao modo escuro e troca de idioma, proporcionando a melhor experiência de consulta.
+Esta é uma ferramenta de referência de comandos desenvolvida para jogadores de Hearts of Iron IV (HOI4). Ela integra comandos de console comuns e códigos de equipamento. A ferramenta oferece suporte ao modo escuro e troca de idioma.
 
 ### Funcionalidades
 - 🎮 Inclui centenas de comandos de console com explicações
@@ -185,15 +170,12 @@ Esta é uma ferramenta de referência de comandos desenvolvida para jogadores de
 ### Contribuições e feedback
 - Envie pull requests para corrigir erros ou melhorar funcionalidades
 - Utilize a aba Issues para sugestões ou relatos de problemas
-- Compartilhe esta ferramenta com outros fãs de HOI4!
-
+- Compartilhe esta ferramenta com outros fãs de HOI4！
 
 ---
 
-
 ## 🇷🇺 Русский
-
-Это справочный инструмент по командам, разработанный для игроков Hearts of Iron IV (HOI4). Он объединяет часто используемые консольные команды, коды снаряжения и ссылки на интерактивные карты. Инструмент поддерживает тёмную тему и смену языков, обеспечивая наилучший опыт использования.
+Это справочный инструмент по командам, разработанный для игроков Hearts of Iron IV (HOI4). Он объединяет часто используемые консольные команды и коды снаряжения. Поддерживается тёмная тема и смена языков для лучшего опыта.
 
 ### Возможности
 - 🎮 Содержит сотни популярных консольных команд с пояснениями
@@ -217,10 +199,5 @@ Esta é uma ferramenta de referência de comandos desenvolvida para jogadores de
 ### Вклад и обратная связь
 - Присылайте Pull Request'ы для исправления ошибок или улучшения функций
 - Используйте вкладку Issues для предложений или сообщений о проблемах
-- Поделитесь этим инструментом с другими поклонниками HOI4!
+- Поделитесь этим инструментом с другими поклонниками HOI4！
 
-
----
-
-製作人 | Author: PomeloBiscuit  
-版本 | Version: v1.0
