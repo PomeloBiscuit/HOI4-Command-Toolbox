@@ -1,5 +1,7 @@
 # 鋼鐵雄心4 指令工具箱 | HOI4 Command Toolbox
 
+🔗 **[👉 點我開啟線上版工具箱網站](https://pomelobiscuit.github.io/HOI4-Command-Toolbox/)**
+
 ## 🌟 繁體中文
 這是一款為《鋼鐵雄心4（Hearts of Iron IV）》玩家打造的指令查詢工具，整合遊戲中常用的 Console 指令、裝備代碼，並支援深色模式與多語言切換，提供最佳的查詢體驗。
 
