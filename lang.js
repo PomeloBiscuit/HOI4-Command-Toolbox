@@ -553,6 +553,206 @@ const baseDescriptions = {
     pt: "Aumentar ou reduzir a opinião entre dois países",
     ru: "Улучшить или ухудшить мнение между двумя странами"
   },
+
+  desc_intelnetwork_instant: { 
+    zh: "瞬間拉滿情報網", 
+    en: "Instantly max out the intel network", 
+    ja: "情報ネットワークを即座に最大化",
+    ko: "첩보 네트워크 즉시 최대화",
+    es: "Maximizar instantáneamente la red de inteligencia",
+    pt: "Maximizar instantaneamente a rede de inteligência",
+    ru: "Мгновенно максимизировать сеть разведки"
+  },
+  desc_allowoperations: { 
+    zh: "間諜行動取消條件限制", 
+    en: "Remove requirements for spy operations", 
+    ja: "スパイ作戦の要件を削除",
+    ko: "첩보 작전 요구 사항 제거",
+    es: "Eliminar requisitos para operaciones de espionaje",
+    pt: "Remover requisitos para operações de espionagem",
+    ru: "Удалить требования для шпионских операций"
+  },
+
+  desc_collaboration_amount: { 
+    zh: "建立合作政府（右鍵指定國家），設定合作程度", 
+    en: "Create a collaboration government (right-click a country), set collaboration level",
+    ja: "協力政府を設立（国を右クリック）、協力度を設定",
+    ko: "협력 정부 설립 (국가 우클릭), 협력 수준 설정",
+    es: "Crear un gobierno de colaboración (clic derecho en un país), establecer nivel de colaboración",
+    pt: "Criar um governo de colaboração (clique com o botão direito em um país), definir nível de colaboração",
+    ru: "Создать коллаборационное правительство (щелкните правой кнопкой мыши по стране), установить уровень сотрудничества"
+  },
+
+  desc_bisc: { 
+    zh: "無制海權登陸", 
+    en: "Naval invasion without naval supremacy",
+    ja: "制海権なしでの上陸",
+    ko: "해상 우위 없이 상륙",
+    es: "Invasión naval sin supremacía naval",
+    pt: "Invasão naval sem supremacia naval",
+    ru: "Морское вторжение без господства на море" 
+  },
+
+  desc_nocb: { 
+    zh: "解鎖所有外交選項（對 AI 有效通常需暫停）", 
+    en: "Unlock all diplomatic options (may require pausing for AI)",
+    ja: "全ての外交オプションを解除（AIには一時停止が必要な場合あり）",
+    ko: "모든 외교 옵션 잠금 해제 (AI의 경우 일시 중지가 필요할 수 있음)",
+    es: "Desbloquear todas las opciones diplomáticas (puede requerir pausar para la IA)",
+    pt: "Desbloquear todas as opções diplomáticas (pode exigir pausa para IA)",
+    ru: "Разблокировать все дипломатические опции (может потребоваться пауза для ИИ)"
+  },
+
+  desc_add_opinion_tag: { 
+    zh: "改善外交關係（輸入目標國家 TAG）", 
+    en: "Improve relations (enter target country TAG)",
+    ja: "外交関係を改善（ターゲット国のTAGを入力）",
+    ko: "외교 관계 개선 (대상 국가 TAG 입력)",
+    es: "Mejorar relaciones (ingresar la etiqueta del país objetivo)",
+    pt: "Melhorar relações (inserir a TAG do país alvo)",
+    ru: "Улучшить отношения (введите TAG целевой страны)"
+  },
+
+  desc_add_intel_tag: { 
+    zh: "取得該國全部情報（輸入國家 TAG）", 
+    en: "Gain full intel on a country (enter country TAG)",
+    ja: "国の全情報を取得（国のTAGを入力）",
+    ko: "국가에 대한 전체 정보 획득 (국가 TAG 입력)",
+    es: "Obtener inteligencia completa sobre un país (ingresar la etiqueta del país)",
+    pt: "Obter inteligência completa sobre um país (inserir a TAG do país)",
+    ru: "Получить полную разведку о стране (введите TAG страны)"
+  },
+
+  desc_ai_accept: { 
+    zh: "讓 AI 接受外交請求", 
+    en: "Force AI to accept diplomatic requests",
+    ja: "AIに外交要求を受け入れさせる",
+    ko: "AI가 외교 요청을 수락하도록 강제",
+    es: "Forzar a la IA a aceptar solicitudes diplomáticas",
+    pt: "Forçar a IA a aceitar solicitações diplomáticas",
+    ru: "Заставить ИИ принять дипломатические запросы"
+  },
+
+  desc_acclimatization_hot: { 
+    zh: "陸軍炎熱適應度（數值）", 
+    en: "Army hot climate acclimatization (amount)",
+    ja: "陸軍の暑熱適応度（数値）",
+    ko: "육군 더운 기후 적응도 (수치)",
+    es: "Acondicionamiento al clima cálido del ejército (cantidad)",
+    pt: "Aclimatação ao clima quente do exército (quantidade)",
+    ru: "Адаптация армии к жаркому климату (количество)"
+  },
+
+  desc_acclimatization_cold: { 
+    zh: "陸軍寒冷適應度（數值）", 
+    en: "Army cold climate acclimatization (amount)",
+    ja: "陸軍の寒冷適応度（数値）",
+    ko: "육군 추운 기후 적응도 (수치)",
+    es: "Acondicionamiento al clima frío del ejército (cantidad)",
+    pt: "Aclimatação ao clima frio do exército (quantidade)",
+    ru: "Адаптация армии к холодному климату (количество)"
+  },
+
+  desc_allowideas: { 
+    zh: "無條件解鎖所有法案與三軍精神", 
+    en: "Unlock all laws and military spirits unconditionally",
+    ja: "全ての法案と軍の精神を無条件で解除",
+    ko: "모든 법안 및 군사 정신 무조건 잠금 해제",
+    es: "Desbloquear todas las leyes y espíritus militares incondicionalmente",
+    pt: "Desbloquear todas as leis e espíritos militares incondicionalmente",
+    ru: "Безусловно разблокировать все законы и военные духи"
+  },
+
+  desc_bop_show: { 
+    zh: "查看權力平衡 ID", 
+    en: "Show balance of power IDs",
+    ja: "勢力均衡のIDを表示",
+    ko: "권력 균형 ID 표시",
+    es: "Mostrar IDs de equilibrio de poder",
+    pt: "Mostrar IDs de equilíbrio de poder",
+    ru: "Показать идентификаторы баланса сил"
+  },
+  
+  desc_bop_remove_id: { 
+    zh: "移除指定權力平衡（輸入 ID）", 
+    en: "Remove a balance of power by ID",
+    ja: "指定した勢力均衡を削除（IDを入力）",
+    ko: "ID로 권력 균형 제거",
+    es: "Eliminar un equilibrio de poder por ID",
+    pt: "Remover um equilíbrio de poder por ID",
+    ru: "Удалить баланс сил по ID"
+  },
+
+  desc_bank_amount: { 
+    zh: "增加國際市場經濟產能盈餘（數值）", 
+    en: "Increase international market economic capacity surplus (amount)",
+    ja: "国際市場の経済能力余剰を増加（数値）",
+    ko: "국제 시장 경제 용량 잉여 증가 (수치)",
+    es: "Aumentar el excedente de capacidad económica del mercado internacional (cantidad)",
+    pt: "Aumentar o excedente de capacidade econômica do mercado internacional (quantidade)",
+    ru: "Увеличить избыточную экономическую мощность международного рынка (количество)"
+  },
+
+  desc_addsize_org_amount: { 
+    zh: "增加軍工組織等級（無 ID 則全部增加）", 
+    en: "Increase military industrial organization level (all if no ID)",
+    ja: "軍需工業組織レベルを増加（IDがなければ全て増加）",
+    ko: "군수 산업 조직 수준 증가 (ID가 없으면 모두 증가)",
+    es: "Aumentar el nivel de organización industrial militar (todo si no hay ID)",
+    pt: "Aumentar o nível da organização industrial militar (tudo se não houver ID)",
+    ru: "Повысить уровень военной промышленной организации (все, если нет ID)"
+  },
+
+  desc_addfunds_org_amount: { 
+    zh: "增加軍工組織經費（無 ID 則全部增加）", 
+    en: "Increase military industrial organization funds (all if no ID)",
+    ja: "軍需工業組織の資金を増加（IDがなければ全て増加）",
+    ko: "군수 산업 조직 자금 증가 (ID가 없으면 모두 증가)",
+    es: "Aumentar los fondos de la organización industrial militar (todo si no hay ID)",
+    pt: "Aumentar os fundos da organização industrial militar (tudo se não houver ID)",
+    ru: "Увеличить средства военной промышленной организации (все, если нет ID)"
+  },
+
+  desc_fa: { 
+    zh: "國策瞬間完成（對 AI 有效通常需暫停）", 
+    en: "Instantly complete national focus (may require pausing for AI)",
+    ja: "国家方針を即時完了（AIには一時停止が必要な場合あり）",
+    ko: "국가중점 즉시 완료 (AI의 경우 일시 중지가 필요할 수 있음)",
+    es: "Completar enfoque nacional al instante (puede requerir pausar para la IA)",
+    pt: "Completar foco nacional instantaneamente (pode exigir pausa para IA)",
+    ru: "Мгновенно завершить национальный фокус (может потребоваться пауза для ИИ)"
+  },
+
+  desc_st_amount: { 
+    zh: "穩定度（數值）", 
+    en: "Stability (amount)",
+    ja: "安定度（数値）",
+    ko: "안정도 (수치)",
+    es: "Estabilidad (cantidad)",
+    pt: "Estabilidade (quantidade)",
+    ru: "Стабильность (количество)"
+  },
+
+  desc_ws_amount: { 
+    zh: "戰爭支持度（數值）", 
+    en: "War support (amount)",
+    ja: "戦争支持度（数値）",
+    ko: "전쟁 지원도 (수치)",
+    es: "Apoyo a la guerra (cantidad)",
+    pt: "Apoio à guerra (quantidade)",
+    ru: "Поддержка войны (количество)"
+  },
+
+  desc_focus_ignoreprerequisites: { 
+    zh: "國策可忽略前置條件（可從中間直接點；對 AI 有效）", 
+    en: "Ignore national focus prerequisites (AI effective)",
+    ja: "国家方針の前提条件を無視（AIに有効）",
+    ko: "국가중점 전제조건 무시 (AI에 효과적)",
+    es: "Ignorar los requisitos previos del enfoque nacional (efectivo para IA)",
+    pt: "Ignorar os pré-requisitos do foco nacional (efetivo para IA)",
+    ru: "Игнорировать условия национального фокуса (эффективно для ИИ)"
+  },
+  
   desc_whitepeace: {
     zh: "雙方立即簽署白和平",
     en: "Instantly enforce white peace",
@@ -931,6 +1131,36 @@ const baseDescriptions = {
     pt: "Adicionar combustível",
     ru: "Добавить топливо"
   },
+  code_fuel_gain: {
+  zh: "fuel_gain [自訂數字]",
+  en: "fuel_gain [amount]",
+  ja: "fuel_gain [数値]",
+  ko: "fuel_gain [값]"
+},
+desc_fuel_everyday: {
+  zh: "每日增加 自訂數字 燃料",
+  en: "Add a custom amount of fuel every day",
+  ja: "毎日カスタム数値の燃料を追加",
+  ko: "매일 사용자 지정 수량의 연료 추가"
+},
+  code_add_resource_eval: {
+  zh: "eval_effect ROOT = { add_resource = { type = 資源名稱 amount = 數值 state = 省份代碼 } }",
+  en: "eval_effect ROOT = { add_resource = { type = resource_type amount = value state = state_id } }",
+  ja: "eval_effect ROOT = { add_resource = { type = 資源タイプ amount = 数値 state = 州ID } }",
+  ko: "eval_effect ROOT = { add_resource = { type = 자원_유형 amount = 값 state = 주_ID } }",
+  es: "eval_effect ROOT = { add_resource = { type = tipo_de_recurso amount = valor state = id_de_estado } }",
+  pt: "eval_effect ROOT = { add_resource = { type = tipo_de_recurso amount = valor state = id_do_estado } }",
+  ru: "eval_effect ROOT = { add_resource = { type = тип_ресурса amount = значение state = id_штата } }"
+},
+desc_add_resource: {
+  zh: "增加指定省份的資源（將 資源名稱、數值、省份代碼 替換為實際內容）",
+  en: "Add resources to a specified state (replace placeholders with actual values).",
+  ja: "指定した州に資源を追加（プレースホルダーを実際の値に置換）",
+  ko: "지정된 주에 자원 추가(자리표시자를 실제 값으로 교체)",
+  es: "Agregar recursos a un estado especificado (reemplazar marcadores con valores reales).",
+  pt: "Adicionar recursos a um estado especificado (substituir espaços reservados por valores reais).",
+  ru: "Добавить ресурсы в указанный штат (замените заполнители на реальные значения)."
+},
   desc_nukes: {
     zh: "增加核彈",
     en: "Add nukes",
