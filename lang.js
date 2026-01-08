@@ -1152,6 +1152,15 @@ desc_fuel_everyday: {
   pt: "eval_effect ROOT = { add_resource = { type = tipo_de_recurso amount = valor state = id_do_estado } }",
   ru: "eval_effect ROOT = { add_resource = { type = тип_ресурса amount = значение state = id_штата } }"
 },
+note_resource_type_map: {
+  zh: "資源對照：石油=oil、鋁=aluminium、橡膠=rubber、鎢=tungsten、鋼鐵=steel、鉻=chromium、煤炭=coal",
+  en: "Resource mapping: Oil=oil, Aluminium=aluminium, Rubber=rubber, Tungsten=tungsten, Steel=steel, Chromium=chromium, Coal=coal",
+  ja: "資源対応表：石油=oil、アルミニウム=aluminium、ゴム=rubber、タングステン=tungsten、鋼鉄=steel、クロム=chromium、石炭=coal",
+  ko: "자원 매핑: 석유=oil, 알루미늄=aluminium, 고무=rubber, 텅스텐=tungsten, 강철=steel, 크롬=chromium, 석탄=coal",
+  es: "Mapeo de recursos: Petróleo=oil, Aluminio=aluminium, Caucho=rubber, Tungsteno=tungsten, Acero=steel, Cromo=chromium, Carbón=coal",
+  pt: "Mapeamento de recursos: Petróleo=oil, Alumínio=aluminium, Borracha=rubber, Tungstênio=tungsten, Aço=steel, Cromo=chromium, Carvão=coal",
+  ru: "Соответствие ресурсов: Нефть=oil, Алюминий=aluminium, Резина=rubber, Вольфрам=tungsten, Сталь=steel, Хром=chromium, Уголь=coal"
+},
 desc_add_resource: {
   zh: "增加指定省份的資源（將 資源名稱、數值、省份代碼 替換為實際內容）",
   en: "Add resources to a specified state (replace placeholders with actual values).",

@@ -48,6 +48,31 @@
       border-radius: 4px;
       font-family: 'Courier New', Courier, monospace;
       color: #37474f;
+      cursor: pointer;
+    }
+    code.code-copied {
+      background: #c8e6c9;
+      color: #1b5e20;
+    }
+    .copy-toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: rgba(46, 125, 50, 0.95);
+      color: #fff;
+      font-size: 0.95rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      pointer-events: none;
+      z-index: 1200;
+    }
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateY(0);
     }
     section {
       margin-bottom: 2rem;
@@ -471,7 +496,7 @@
 <li data-i18n="desc_research_all：完成所有研究"><code>research all</code>：<span data-i18n="desc_research_all">完成所有研究</span></li>
 <li data-i18n="desc_nukes：增加核彈"><code>nukes</code>：<span data-i18n="desc_nukes">增加核彈</span></li>
 <li><code data-i18n="code_fuel_gain">fuel_gain [自訂數字]</code>：<span data-i18n="desc_fuel_everyday">每日增加 自訂數字 燃料</span></li>
-<li><code data-i18n="code_add_resource_eval">eval_effect ROOT = { add_resource = { type = 資源名稱 amount = 數值 state = 省份代碼 } }</code>：<span data-i18n="desc_add_resource">增加指定省份的資源（將 資源名稱、數值、省份代碼 替換為實際內容）</span></li>
+<li><code data-i18n="code_add_resource_eval">eval_effect ROOT = { add_resource = { type = &lt;resource_type&gt; amount = &lt;amount&gt; state = &lt;state_id&gt; } }</code>：<span data-i18n="desc_add_resource">增加指定省份的資源（將資源類型、數值、省份代碼替換為實際內容）</span><br><small data-i18n="note_resource_type_map">資源對照：石油=oil、鋁=aluminium、橡膠=rubber、鎢=tungsten、鋼鐵=steel、鉻=chromium、煤炭=coal</small></li>
 <li data-i18n="desc_agency.instantslotunlock：立即解鎖特工槽"><code>agency.instantslotunlock</code>：<span data-i18n="desc_agency_instantslotunlock">立即解鎖特工槽</span></li>
 <li data-i18n="desc_agency.autocomplete：立即完成升級"><code>agency.autocomplete</code>：<span data-i18n="desc_agency_autocomplete">立即完成升級</span></li>
 <li data-i18n="desc_agency.instant：即刻完成行動"><code>agency.instant</code>：<span data-i18n="desc_agency_instant">即刻完成行動</span></li>
@@ -1025,7 +1050,7 @@ tdebug：顯示省州_id，與地圖層切換搭配最佳"><strong data-i18n="ma
 <p data-i18n="footer_trademark"></p></p>
 <p data-i18n="footer_contact"></p></p>
 <p><span data-i18n="footer_github"></span>：<a href="https://github.com/你的帳號/hoi4-console-helper" style="color:#00796b; text-decoration:underline;" target="_blank">前往 GitHub</a></p>
-<p>© 2025 HOI4 Command Toolbox</p>
+<p>© 2026 HOI4 Command Toolbox</p>
 </footer>
 
 <script>
@@ -1360,5 +1385,122 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初始渲染
   applyLanguage(currentLang);
 });
-</script></body>
+</script><script id="code-click-to-copy">
+  document.addEventListener("click", (event) => {
+    const code = event.target.closest("code");
+    if (!code) return;
+
+    const text = code.textContent.trim();
+    if (!text) return;
+
+    const originalTitle = code.getAttribute("title") || "";
+    let toastTimer;
+    const copyMessages = {
+      zh: {
+        copied: "已複製",
+        selected: "已選取，請 Ctrl+C"
+      },
+      en: {
+        copied: "Copied",
+        selected: "Selected, press Ctrl+C"
+      },
+      ja: {
+        copied: "コピーしました",
+        selected: "選択済み、Ctrl+Cでコピー"
+      },
+      ko: {
+        copied: "복사됨",
+        selected: "선택됨, Ctrl+C로 복사"
+      },
+      es: {
+        copied: "Copiado",
+        selected: "Seleccionado, presiona Ctrl+C"
+      },
+      pt: {
+        copied: "Copiado",
+        selected: "Selecionado, pressione Ctrl+C"
+      },
+      ru: {
+        copied: "Скопировано",
+        selected: "Выделено, нажмите Ctrl+C"
+      }
+    };
+
+    function getCurrentLang() {
+      return window.currentLang || localStorage.getItem("lang") || "zh";
+    }
+
+    function getCopyLabel(kind) {
+      const lang = getCurrentLang();
+      const pack = copyMessages[lang] || copyMessages.zh;
+      return pack[kind] || copyMessages.zh[kind];
+    }
+
+    function showToast(message) {
+      let toast = document.getElementById("copyToast");
+      if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "copyToast";
+        toast.className = "copy-toast";
+        document.body.appendChild(toast);
+      }
+      toast.textContent = message;
+      toast.classList.add("show");
+      if (toastTimer) {
+        window.clearTimeout(toastTimer);
+      }
+      toastTimer = window.setTimeout(() => {
+        toast.classList.remove("show");
+      }, 1200);
+    }
+
+    function markCopied(label) {
+      code.classList.add("code-copied");
+      code.setAttribute("title", label);
+      showToast(label);
+      window.setTimeout(() => {
+        code.classList.remove("code-copied");
+        if (originalTitle) {
+          code.setAttribute("title", originalTitle);
+        } else {
+          code.removeAttribute("title");
+        }
+      }, 1200);
+    }
+
+    function selectCodeText() {
+      const range = document.createRange();
+      range.selectNodeContents(code);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+
+    function fallbackCopy() {
+      selectCodeText();
+      try {
+        const ok = document.execCommand("copy");
+        if (ok) {
+          markCopied(getCopyLabel("copied"));
+        } else {
+          markCopied(getCopyLabel("selected"));
+        }
+      } catch (err) {
+        markCopied(getCopyLabel("selected"));
+      }
+    }
+
+    selectCodeText();
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)
+        .then(() => markCopied(getCopyLabel("copied")))
+        .catch(() => fallbackCopy());
+      return;
+    }
+
+    fallbackCopy();
+  });
+</script>
+</body>
 </html>
