@@ -1860,6 +1860,510 @@ desc_add_resource: {
       pt: "Comandos como spawn ou instant_prepare exigem modo debug",
       ru: "Команды вроде spawn и instant_prepare требуют режима debug"
     },
+
+    code_army_leaders_god: {
+  zh: "eval_effect every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  en: "eval_effect every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  ja: "eval_effect every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  ko: "eval_effect every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  es: "eval_effect every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  pt: "eval_effect every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  ru: "eval_effect every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}"
+},
+desc_army_leaders_god: {
+  zh: "選擇國家：所有陸軍將領加 10 特質槽、10 技能等級與各項屬性（全神將）",
+  en: "Select a country: boost all army leaders (max traits/skills and stats).",
+  ja: "国家を選択：全陸軍指揮官の特性枠・スキル・能力を大幅強化。",
+  ko: "국가 선택: 모든 육군 지휘관의 특성 슬롯/스킬/능력치를 크게 강화.",
+  es: "Selecciona un país: mejora a todos los líderes del ejército (rasgos/habilidades/estadísticas).",
+  pt: "Selecione um país: melhora todos os líderes do exército (traços/habilidades/atributos).",
+  ru: "Выберите страну: усилить всех сухопутных командиров (черты/навыки/параметры)."
+},
+
+code_navy_leaders_god: {
+  zh: "eval_effect every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  en: "eval_effect every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  ja: "eval_effect every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  ko: "eval_effect every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  es: "eval_effect every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  pt: "eval_effect every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  ru: "eval_effect every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}"
+},
+desc_navy_leaders_god: {
+  zh: "選擇國家：所有海軍將領加 10 特質槽、10 技能等級與各項屬性（全神將）",
+  en: "Select a country: boost all navy leaders (max traits/skills and stats).",
+  ja: "国家を選択：全海軍指揮官の特性枠・スキル・能力を大幅強化。",
+  ko: "국가 선택: 모든 해군 지휘관의 특성 슬롯/스킬/능력치를 크게 강화.",
+  es: "Selecciona un país: mejora a todos los líderes navales (rasgos/habilidades/estadísticas).",
+  pt: "Selecione um país: melhora todos os líderes navais (traços/habilidades/atributos).",
+  ru: "Выберите страну: усилить всех морских командиров (черты/навыки/параметры)."
+},
+
+code_promote_all_army_leaders: {
+  zh: "eval_effect every_army_leader={if={limit={is_field_marshal=no}promote_leader=yes}}",
+  en: "eval_effect every_army_leader={if={limit={is_field_marshal=no}promote_leader=yes}}",
+  ja: "eval_effect every_army_leader={if={limit={is_field_marshal=no}promote_leader=yes}}",
+  ko: "eval_effect every_army_leader={if={limit={is_field_marshal=no}promote_leader=yes}}",
+  es: "eval_effect every_army_leader={if={limit={is_field_marshal=no}promote_leader=yes}}",
+  pt: "eval_effect every_army_leader={if={limit={is_field_marshal=no}promote_leader=yes}}",
+  ru: "eval_effect every_army_leader={if={limit={is_field_marshal=no}promote_leader=yes}}"
+},
+desc_promote_all_army_leaders: {
+  zh: "選擇國家：將所有陸軍將領提升為陸軍元帥",
+  en: "Select a country: promote all army leaders to field marshals.",
+  ja: "国家を選択：全陸軍指揮官を元帥に昇進。",
+  ko: "국가 선택: 모든 육군 지휘관을 원수로 승진.",
+  es: "Selecciona un país: asciende a todos los líderes del ejército a mariscales.",
+  pt: "Selecione um país: promove todos os líderes do exército a marechais.",
+  ru: "Выберите страну: повысить всех сухопутных командиров до фельдмаршалов."
+},
+
+code_army_leaders_god_root: {
+  zh: "eval_effect ROOT={every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}}",
+  en: "eval_effect ROOT={every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}}",
+  ja: "eval_effect ROOT={every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}}",
+  ko: "eval_effect ROOT={every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}}",
+  es: "eval_effect ROOT={every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}}",
+  pt: "eval_effect ROOT={every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}}",
+  ru: "eval_effect ROOT={every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}}"
+},
+desc_army_leaders_god_root: {
+  zh: "選擇國家：給每個陸軍將領增加特質槽與技能等級（ROOT 範圍版）",
+  en: "Select a country: boost every army leader (ROOT scope version).",
+  ja: "国家を選択：全陸軍指揮官を強化（ROOT スコープ版）。",
+  ko: "국가 선택: 모든 육군 지휘관 강화(ROOT 범위 버전).",
+  es: "Selecciona un país: mejora a cada líder del ejército (versión ROOT).",
+  pt: "Selecione um país: melhora cada líder do exército (versão ROOT).",
+  ru: "Выберите страну: усилить каждого сухопутного командира (версия ROOT)."
+},
+
+code_navy_leaders_god_root: {
+  zh: "eval_effect ROOT={every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}}",
+  en: "eval_effect ROOT={every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}}",
+  ja: "eval_effect ROOT={every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}}",
+  ko: "eval_effect ROOT={every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}}",
+  es: "eval_effect ROOT={every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}}",
+  pt: "eval_effect ROOT={every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}}",
+  ru: "eval_effect ROOT={every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}}"
+},
+desc_navy_leaders_god_root: {
+  zh: "選擇國家：給每個海軍將領增加特質槽與技能等級（ROOT 範圍版）",
+  en: "Select a country: boost every navy leader (ROOT scope version).",
+  ja: "国家を選択：全海軍指揮官を強化（ROOT スコープ版）。",
+  ko: "국가 선택: 모든 해군 지휘관 강화(ROOT 범위 버전).",
+  es: "Selecciona un país: mejora a cada líder naval (versión ROOT).",
+  pt: "Selecione um país: melhora cada líder naval (versão ROOT).",
+  ru: "Выберите страну: усилить каждого морского командира (версия ROOT)."
+},
+
+code_army_leader_god_single: {
+  zh: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  en: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  ja: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  ko: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  es: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  pt: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}",
+  ru: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}"
+},
+desc_army_leader_god_single: {
+  zh: "選擇陸軍將領：加 10 特質槽、10 技能等級與各項屬性（角色範圍）",
+  en: "Select an army leader: boost traits/skills and stats (character scope).",
+  ja: "陸軍指揮官を選択：特性枠・スキル・能力を強化（キャラクター範囲）。",
+  ko: "육군 지휘관 선택: 특성/스킬/능력치 강화(캐릭터 범위).",
+  es: "Selecciona un líder del ejército: mejora rasgos/habilidades/estadísticas (ámbito del personaje).",
+  pt: "Selecione um líder do exército: melhora traços/habilidades/atributos (escopo do personagem).",
+  ru: "Выберите сухопутного командира: усилить (область персонажа)."
+},
+
+code_navy_leader_god_single: {
+  zh: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  en: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  ja: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  ko: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  es: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  pt: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}",
+  ru: "eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}"
+},
+desc_navy_leader_god_single: {
+  zh: "選擇海軍將領：加 10 特質槽、10 技能等級與各項屬性（注意：需選特遣艦隊，不是艦隊）",
+  en: "Select a navy leader: boost traits/skills and stats (requires selecting a task force, not a fleet).",
+  ja: "海軍指揮官を選択：強化（注意：艦隊ではなく任務部隊を選択）。",
+  ko: "해군 지휘관 선택: 강화(주의: 함대가 아니라 태스크포스 선택 필요).",
+  es: "Selecciona un líder naval: mejora (requiere seleccionar una fuerza de tarea, no una flota).",
+  pt: "Selecione um líder naval: melhora (precisa selecionar uma força-tarefa, não a frota).",
+  ru: "Выберите морского командира: усилить (нужна оперативная группа, не флот)."
+},
+
+code_supply_node_and_rail: {
+  zh: "eval_effect every_controlled_state={construct_building_in_random_province={supply_node=1}every_neighbor_state={limit={is_controlled_by=ROOT}ROOT={build_railway={level=5 build_only_on_allied=yes start_state=PREV target_state=PREV.PREV}}}}",
+  en: "eval_effect every_controlled_state={construct_building_in_random_province={supply_node=1}every_neighbor_state={limit={is_controlled_by=ROOT}ROOT={build_railway={level=5 build_only_on_allied=yes start_state=PREV target_state=PREV.PREV}}}}",
+  ja: "eval_effect every_controlled_state={construct_building_in_random_province={supply_node=1}every_neighbor_state={limit={is_controlled_by=ROOT}ROOT={build_railway={level=5 build_only_on_allied=yes start_state=PREV target_state=PREV.PREV}}}}",
+  ko: "eval_effect every_controlled_state={construct_building_in_random_province={supply_node=1}every_neighbor_state={limit={is_controlled_by=ROOT}ROOT={build_railway={level=5 build_only_on_allied=yes start_state=PREV target_state=PREV.PREV}}}}",
+  es: "eval_effect every_controlled_state={construct_building_in_random_province={supply_node=1}every_neighbor_state={limit={is_controlled_by=ROOT}ROOT={build_railway={level=5 build_only_on_allied=yes start_state=PREV target_state=PREV.PREV}}}}",
+  pt: "eval_effect every_controlled_state={construct_building_in_random_province={supply_node=1}every_neighbor_state={limit={is_controlled_by=ROOT}ROOT={build_railway={level=5 build_only_on_allied=yes start_state=PREV target_state=PREV.PREV}}}}",
+  ru: "eval_effect every_controlled_state={construct_building_in_random_province={supply_node=1}every_neighbor_state={limit={is_controlled_by=ROOT}ROOT={build_railway={level=5 build_only_on_allied=yes start_state=PREV target_state=PREV.PREV}}}}"
+},
+desc_supply_node_and_rail: {
+  zh: "選擇國家：所有控制地區新增 1 個補給中心，並建造 5 級鐵路連接",
+  en: "Select a country: add supply nodes and build level-5 railways across controlled states.",
+  ja: "国家を選択：支給拠点を追加し、支配州間にレベル5鉄道を建設。",
+  ko: "국가 선택: 보급 중심 추가 및 통제 지역에 5레벨 철도 건설.",
+  es: "Selecciona un país: añade centros de suministro y construye ferrocarriles de nivel 5.",
+  pt: "Selecione um país: adiciona centros de suprimento e constrói ferrovias nível 5.",
+  ru: "Выберите страну: добавить узлы снабжения и построить ж/д уровня 5."
+},
+
+code_state_coastal_naval_base_10: {
+  zh: "eval_effect add_building_construction={type=naval_base level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  en: "eval_effect add_building_construction={type=naval_base level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  ja: "eval_effect add_building_construction={type=naval_base level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  ko: "eval_effect add_building_construction={type=naval_base level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  es: "eval_effect add_building_construction={type=naval_base level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  pt: "eval_effect add_building_construction={type=naval_base level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  ru: "eval_effect add_building_construction={type=naval_base level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}"
+},
+desc_state_coastal_naval_base_10: {
+  zh: "選擇地區：在所有沿海省份建造滿級海軍基地",
+  en: "Select a state: build level-10 naval bases in all coastal provinces.",
+  ja: "州を選択：沿岸の全プロヴィンスにレベル10海軍基地を建設。",
+  ko: "주 선택: 모든 해안 지역에 10레벨 해군기지 건설.",
+  es: "Selecciona un estado: construye bases navales nivel 10 en provincias costeras.",
+  pt: "Selecione um estado: construa bases navais nível 10 nas províncias costeiras.",
+  ru: "Выберите регион: построить ВМБ уровня 10 во всех прибрежных провинциях."
+},
+
+code_state_coastal_naval_supply_hub: {
+  zh: "eval_effect add_building_construction={type=naval_supply_hub level=1 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  en: "eval_effect add_building_construction={type=naval_supply_hub level=1 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  ja: "eval_effect add_building_construction={type=naval_supply_hub level=1 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  ko: "eval_effect add_building_construction={type=naval_supply_hub level=1 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  es: "eval_effect add_building_construction={type=naval_supply_hub level=1 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  pt: "eval_effect add_building_construction={type=naval_supply_hub level=1 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}",
+  ru: "eval_effect add_building_construction={type=naval_supply_hub level=1 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}"
+},
+desc_state_coastal_naval_supply_hub: {
+  zh: "選擇地區：在所有沿海省份建造海軍補給中心",
+  en: "Select a state: add naval supply hubs to all coastal provinces.",
+  ja: "州を選択：沿岸の全プロヴィンスに海軍補給拠点を追加。",
+  ko: "주 선택: 모든 해안 지역에 해군 보급 허브 추가.",
+  es: "Selecciona un estado: añade centros de suministro naval en provincias costeras.",
+  pt: "Selecione um estado: adicione centros de suprimento naval nas províncias costeiras.",
+  ru: "Выберите регион: добавить морские узлы снабжения во все прибрежные провинции."
+},
+
+code_country_coastal_bunker_10: {
+  zh: "eval_effect every_controlled_state={limit={is_coastal=yes}add_building_construction={type=coastal_bunker level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}}",
+  en: "eval_effect every_controlled_state={limit={is_coastal=yes}add_building_construction={type=coastal_bunker level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}}",
+  ja: "eval_effect every_controlled_state={limit={is_coastal=yes}add_building_construction={type=coastal_bunker level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}}",
+  ko: "eval_effect every_controlled_state={limit={is_coastal=yes}add_building_construction={type=coastal_bunker level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}}",
+  es: "eval_effect every_controlled_state={limit={is_coastal=yes}add_building_construction={type=coastal_bunker level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}}",
+  pt: "eval_effect every_controlled_state={limit={is_coastal=yes}add_building_construction={type=coastal_bunker level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}}",
+  ru: "eval_effect every_controlled_state={limit={is_coastal=yes}add_building_construction={type=coastal_bunker level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}}"
+},
+desc_country_coastal_bunker_10: {
+  zh: "選擇國家：所有控制的沿海省份建造滿級海岸要塞",
+  en: "Select a country: build level-10 coastal bunkers in all controlled coastal areas.",
+  ja: "国家を選択：支配する沿岸地域にレベル10海岸要塞を建設。",
+  ko: "국가 선택: 통제 중인 해안 지역에 10레벨 해안 요새 건설.",
+  es: "Selecciona un país: construye búnkeres costeros nivel 10 en zonas costeras controladas.",
+  pt: "Selecione um país: construa fortalezas costeiras nível 10 nas áreas costeiras controladas.",
+  ru: "Выберите страну: построить прибрежные укрепления уровня 10 во всех прибрежных территориях."
+},
+
+code_country_border_bunker_10: {
+  zh: "eval_effect every_controlled_state={add_building_construction={type=bunker level=10 instant_build=yes province={all_provinces=yes limit_to_border=yes}}}",
+  en: "eval_effect every_controlled_state={add_building_construction={type=bunker level=10 instant_build=yes province={all_provinces=yes limit_to_border=yes}}}",
+  ja: "eval_effect every_controlled_state={add_building_construction={type=bunker level=10 instant_build=yes province={all_provinces=yes limit_to_border=yes}}}",
+  ko: "eval_effect every_controlled_state={add_building_construction={type=bunker level=10 instant_build=yes province={all_provinces=yes limit_to_border=yes}}}",
+  es: "eval_effect every_controlled_state={add_building_construction={type=bunker level=10 instant_build=yes province={all_provinces=yes limit_to_border=yes}}}",
+  pt: "eval_effect every_controlled_state={add_building_construction={type=bunker level=10 instant_build=yes province={all_provinces=yes limit_to_border=yes}}}",
+  ru: "eval_effect every_controlled_state={add_building_construction={type=bunker level=10 instant_build=yes province={all_provinces=yes limit_to_border=yes}}}"
+},
+desc_country_border_bunker_10: {
+  zh: "選擇國家：所有控制的邊境省份建造滿級陸上要塞",
+  en: "Select a country: build level-10 land bunkers in all controlled border provinces.",
+  ja: "国家を選択：国境の支配プロヴィンスにレベル10陸上要塞を建設。",
+  ko: "국가 선택: 통제 중인 국경 지역에 10레벨 육상 요새 건설.",
+  es: "Selecciona un país: construye búnkeres terrestres nivel 10 en provincias fronterizas controladas.",
+  pt: "Selecione um país: construa bunkers terrestres nível 10 nas províncias fronteiriças controladas.",
+  ru: "Выберите страну: построить наземные укрепления уровня 10 во всех контролируемых приграничных провинциях."
+},
+
+code_every_owned_state_x10: {
+  zh: "eval_effect every_owned_state={add_state_modifier={modifier={local_manpower=10 local_non_core_manpower=10 local_factories=10 local_resources=10 local_supplies=10 state_production_speed_buildings_factor=10}}}",
+  en: "eval_effect every_owned_state={add_state_modifier={modifier={local_manpower=10 local_non_core_manpower=10 local_factories=10 local_resources=10 local_supplies=10 state_production_speed_buildings_factor=10}}}",
+  ja: "eval_effect every_owned_state={add_state_modifier={modifier={local_manpower=10 local_non_core_manpower=10 local_factories=10 local_resources=10 local_supplies=10 state_production_speed_buildings_factor=10}}}",
+  ko: "eval_effect every_owned_state={add_state_modifier={modifier={local_manpower=10 local_non_core_manpower=10 local_factories=10 local_resources=10 local_supplies=10 state_production_speed_buildings_factor=10}}}",
+  es: "eval_effect every_owned_state={add_state_modifier={modifier={local_manpower=10 local_non_core_manpower=10 local_factories=10 local_resources=10 local_supplies=10 state_production_speed_buildings_factor=10}}}",
+  pt: "eval_effect every_owned_state={add_state_modifier={modifier={local_manpower=10 local_non_core_manpower=10 local_factories=10 local_resources=10 local_supplies=10 state_production_speed_buildings_factor=10}}}",
+  ru: "eval_effect every_owned_state={add_state_modifier={modifier={local_manpower=10 local_non_core_manpower=10 local_factories=10 local_resources=10 local_supplies=10 state_production_speed_buildings_factor=10}}}"
+},
+desc_every_owned_state_x10: {
+  zh: "選擇國家：每個地區套用 10 倍人力、工廠、資源、補給與建造速度",
+  en: "Select a country: apply x10 manpower/factories/resources/supplies/build speed to every owned state.",
+  ja: "国家を選択：保有州に人力・工場・資源・補給・建設速度を10倍付与。",
+  ko: "국가 선택: 모든 보유 주에 인력/공장/자원/보급/건설 속도 10배 적용.",
+  es: "Selecciona un país: aplica x10 a mano de obra/fábricas/recursos/suministros/velocidad de construcción.",
+  pt: "Selecione um país: aplica x10 em mão de obra/fábricas/recursos/suprimentos/velocidade de construção.",
+  ru: "Выберите страну: применить x10 к людским ресурсам/фабрикам/ресурсам/снабжению/скорости строительства."
+},
+desc_ops_add_all_nationalities_country: {
+  zh: "所選的國家會為其所有特工新增所有國家的國籍",
+  en: "Add all nationalities to every operative of the selected country.",
+  ja: "選択した国の全工作員に、すべての国家の国籍を付与します。",
+  ko: "선택한 국가의 모든 요원에게 모든 국가의 국적을 부여합니다.",
+  es: "Añade todas las nacionalidades a todos los agentes del país seleccionado.",
+  pt: "Adiciona todas as nacionalidades a todos os agentes do país selecionado.",
+  ru: "Добавляет все национальности всем агентам выбранной страны."
+},
+
+desc_ops_add_all_nationalities_single: {
+  zh: "所選的特工（需切換至特工地圖模式）將新增所有國家的國籍",
+  en: "Add all nationalities to the selected operative (operative map mode required).",
+  ja: "選択した工作員に、すべての国家の国籍を付与します（工作員マップモードが必要）。",
+  ko: "선택한 요원에게 모든 국가의 국적을 부여합니다(요원 지도 모드 필요).",
+  es: "Añade todas las nacionalidades al agente seleccionado (requiere el modo de mapa de agentes).",
+  pt: "Adiciona todas as nacionalidades ao agente selecionado (modo de mapa de agentes necessário).",
+  ru: "Добавляет все национальности выбранному агенту (требуется режим карты агентов)."
+},
+
+desc_ops_capture_foreign_ops_in_country: {
+  zh: "俘獲所有正在我國境內活動的外國特工（即使未建立情報機構）",
+  en: "Capture all foreign operatives currently operating within your country.",
+  ja: "自国内で活動中の外国工作員を全員捕獲します。",
+  ko: "국내에서 활동 중인 모든 외국 요원을 포획합니다.",
+  es: "Captura a todos los agentes extranjeros que operan actualmente dentro de tu país.",
+  pt: "Captura todos os agentes estrangeiros que estejam operando atualmente no seu país.",
+  ru: "Захватывает всех иностранных агентов, действующих на территории вашей страны."
+},
+
+desc_ops_kill_foreign_ops_in_country: {
+  zh: "擊殺所有正在我國境內活動的外國特工（即使未建立情報機構）",
+  en: "Eliminate all foreign operatives currently operating within your country.",
+  ja: "自国内で活動中の外国工作員を全員排除します。",
+  ko: "국내에서 활동 중인 모든 외국 요원을 제거합니다.",
+  es: "Elimina a todos los agentes extranjeros que operan actualmente dentro de tu país.",
+  pt: "Elimina todos os agentes estrangeiros que estejam operando atualmente no seu país.",
+  ru: "Устраняет всех иностранных агентов, действующих на территории вашей страны."
+},
+
+desc_ops_capture_all_ops_of_selected_country: {
+  zh: "所選的國家，其全部特工將被俘獲（即使未建立情報機構）",
+  en: "Capture all operatives belonging to the selected country.",
+  ja: "選択した国に所属する工作員を全員捕獲します。",
+  ko: "선택한 국가에 소속된 모든 요원을 포획합니다.",
+  es: "Captura a todos los agentes que pertenecen al país seleccionado.",
+  pt: "Captura todos os agentes pertencentes ao país selecionado.",
+  ru: "Захватывает всех агентов, принадлежащих выбранной стране."
+},
+
+desc_ops_capture_all_other_ops_except_player: {
+  zh: "俘獲所有其他國家的全部特工（不包含玩家自己的特工；即使未建立情報機構）",
+  en: "Capture all operatives from other countries (excluding your own).",
+  ja: "他国の工作員を全員捕獲します（自国の工作員は除外）。",
+  ko: "다른 모든 국가의 요원을 포획합니다(자국 요원 제외).",
+  es: "Captura a todos los agentes de otros países (excluyendo los tuyos).",
+  pt: "Captura todos os agentes de outros países (exceto os seus).",
+  ru: "Захватывает агентов всех других стран (кроме ваших собственных)."
+},
+
+desc_ops_kill_all_ops_of_selected_country: {
+  zh: "所選的國家，其全部特工將被擊殺（即使未建立情報機構）",
+  en: "Eliminate all operatives belonging to the selected country.",
+  ja: "選択した国に所属する工作員を全員排除します。",
+  ko: "선택한 국가에 소속된 모든 요원을 제거합니다.",
+  es: "Elimina a todos los agentes que pertenecen al país seleccionado.",
+  pt: "Elimina todos os agentes pertencentes ao país selecionado.",
+  ru: "Устраняет всех агентов, принадлежащих выбранной стране."
+},
+
+desc_ops_kill_all_other_ops_except_player: {
+  zh: "擊殺所有其他國家的全部特工（不包含玩家自己的特工；即使未建立情報機構）",
+  en: "Eliminate all operatives from other countries (excluding your own).",
+  ja: "他国の工作員を全員排除します（自国の工作員は除外）。",
+  ko: "다른 모든 국가의 요원을 제거합니다(자국 요원 제외).",
+  es: "Elimina a todos los agentes de otros países (excluyendo los tuyos).",
+  pt: "Elimina todos os agentes de outros países (exceto os seus).",
+  ru: "Устраняет агентов всех других стран (кроме ваших собственных)."
+},
+
+desc_intel_get_selected_country_full: {
+  zh: "取得所選國家的 100% 民政、陸軍、海軍與空軍情報（有上限且會隨時間衰減，可能需要稍等時間生效）",
+  en: "Gain full civilian, army, navy, and air intel on the selected country.",
+  ja: "選択した国の民政・陸軍・海軍・空軍の完全な情報を取得します。",
+  ko: "선택한 국가에 대한 민정·육군·해군·공군 정보를 모두 획득합니다.",
+  es: "Obtén inteligencia completa civil, terrestre, naval y aérea del país seleccionado.",
+  pt: "Obtém inteligência completa civil, terrestre, naval e aérea do país selecionado.",
+  ru: "Получает полную гражданскую, сухопутную, морскую и воздушную разведку по выбранной стране."
+},
+
+desc_intel_get_all_enemies_full: {
+  zh: "取得所有敵對國家的 100% 民政、陸軍、海軍與空軍情報（即使未建立情報機構）",
+  en: "Gain full civilian, army, navy, and air intel on all enemy countries.",
+  ja: "すべての敵対国の民政・陸軍・海軍・空軍情報を完全に取得します。",
+  ko: "모든 적대국에 대한 민정·육군·해군·공군 정보를 모두 획득합니다.",
+  es: "Obtén inteligencia completa civil, terrestre, naval y aérea de todos los países enemigos.",
+  pt: "Obtém inteligência completa civil, terrestre, naval e aérea de todos os países inimigos.",
+  ru: "Получает полную разведку по всем враждебным странам."
+},
+
+desc_intel_get_all_others_full: {
+  zh: "取得所有其他國家的 100% 民政、陸軍、海軍與空軍情報（即使未建立情報機構）",
+  en: "Gain full civilian, army, navy, and air intel on all other countries.",
+  ja: "すべての他国の民政・陸軍・海軍・空軍情報を完全に取得します。",
+  ko: "다른 모든 국가에 대한 민정·육군·해군·공군 정보를 모두 획득합니다.",
+  es: "Obtén inteligencia completa civil, terrestre, naval y aérea de todos los demás países.",
+  pt: "Obtém inteligência completa civil, terrestre, naval e aérea de todos os outros países.",
+  ru: "Получает полную разведку по всем остальным странам."
+},
+
+desc_decrypt_selected_country_full: {
+  zh: "所選的國家，其密碼將被完全破譯（即使未建立情報機構）",
+  en: "Fully decrypt the selected country's codes.",
+  ja: "選択した国の暗号を完全に解読します。",
+  ko: "선택한 국가의 암호를 완전히 해독합니다.",
+  es: "Descifra completamente los códigos del país seleccionado.",
+  pt: "Descriptografa completamente os códigos do país selecionado.",
+  ru: "Полностью расшифровывает коды выбранной страны."
+},
+
+desc_decrypt_all_enemies_full: {
+  zh: "所有敵對國家的密碼將被完全破譯（即使未建立情報機構）",
+  en: "Fully decrypt the codes of all enemy countries.",
+  ja: "すべての敵対国の暗号を完全に解読します。",
+  ko: "모든 적대국의 암호를 완전히 해독합니다.",
+  es: "Descifra completamente los códigos de todos los países enemigos.",
+  pt: "Descriptografa completamente os códigos de todos os países inimigos.",
+  ru: "Полностью расшифровывает коды всех враждебных стран."
+},
+
+desc_decrypt_all_others_full: {
+  zh: "所有其他國家的密碼將被完全破譯（即使未建立情報機構）",
+  en: "Fully decrypt the codes of all other countries.",
+  ja: "すべての他国の暗号を完全に解読します。",
+  ko: "다른 모든 국가의 암호를 완전히 해독합니다.",
+  es: "Descifra completamente los códigos de todos los demás países.",
+  pt: "Descriptografa completamente os códigos de todos os outros países.",
+  ru: "Полностью расшифровывает коды всех остальных стран."
+},
+desc_country_infrastructure_lv5: {
+  zh: "所選國家所有控制區域的基礎設施將直接升級至第 5 級",
+  en: "Upgrade infrastructure to level 5 in all controlled states of the selected country.",
+  ja: "選択した国の全ての支配州で、インフラをレベル5まで即座に強化します。",
+  ko: "선택한 국가의 모든 통제 지역에서 기반 시설을 5단계로 즉시 업그레이드합니다.",
+  es: "Mejora la infraestructura al nivel 5 en todas las regiones controladas del país seleccionado.",
+  pt: "Atualiza a infraestrutura para o nível 5 em todas as regiões controladas do país selecionado.",
+  ru: "Повышает инфраструктуру до уровня 5 во всех контролируемых регионах выбранной страны."
+},
+
+desc_country_air_base_lv10: {
+  zh: "所選國家所有控制區域的空軍基地將直接升級至最高等級",
+  en: "Upgrade all air bases to maximum level in every controlled state of the selected country.",
+  ja: "選択した国の全ての支配州で、航空基地を最大レベルまで即座に強化します。",
+  ko: "선택한 국가의 모든 통제 지역에서 공군 기지를 최대 단계로 즉시 업그레이드합니다.",
+  es: "Mejora todas las bases aéreas al nivel máximo en todas las regiones controladas del país seleccionado.",
+  pt: "Atualiza todas as bases aéreas para o nível máximo em todas as regiões controladas do país selecionado.",
+  ru: "Повышает все авиабазы до максимального уровня во всех контролируемых регионах выбранной страны."
+},
+
+desc_country_anti_air_lv5: {
+  zh: "所選國家所有控制區域的防空設施將直接升級至第 5 級",
+  en: "Upgrade all anti-air buildings to level 5 in every controlled state of the selected country.",
+  ja: "選択した国の全ての支配州で、防空施設をレベル5まで即座に強化します。",
+  ko: "선택한 국가의 모든 통제 지역에서 방공 시설을 5단계로 즉시 업그레이드합니다.",
+  es: "Mejora todas las defensas antiaéreas al nivel 5 en todas las regiones controladas del país seleccionado.",
+  pt: "Atualiza todas as defesas antiaéreas para o nível 5 em todas as regiões controladas do país selecionado.",
+  ru: "Повышает все зенитные сооружения до уровня 5 во всех контролируемых регионах выбранной страны."
+},
+
+desc_country_radar_lv6: {
+  zh: "所選國家所有控制區域的雷達站將直接升級至第 6 級",
+  en: "Upgrade all radar stations to level 6 in every controlled state of the selected country.",
+  ja: "選択した国の全ての支配州で、レーダー施設をレベル6まで即座に強化します。",
+  ko: "선택한 국가의 모든 통제 지역에서 레이더 기지를 6단계로 즉시 업그레이드합니다.",
+  es: "Mejora todas las estaciones de radar al nivel 6 en todas las regiones controladas del país seleccionado.",
+  pt: "Atualiza todas as estações de radar para o nível 6 em todas as regiões controladas do país selecionado.",
+  ru: "Повышает все радиолокационные станции до уровня 6 во всех контролируемых регионах выбранной страны."
+},
+desc_usa_congress_full_support: {
+  zh: "美國專用：參議院與眾議院的國會支持率將直接設為全滿",
+  en: "USA only: set Senate and House support to maximum.",
+  ja: "アメリカ専用：上院・下院の議会支持率を最大に設定します。",
+  ko: "미국 전용: 상원 및 하원의 의회 지지도를 최대치로 설정합니다.",
+  es: "Solo EE. UU.: establece el apoyo del Senado y la Cámara de Representantes al máximo.",
+  pt: "Apenas EUA: define o apoio do Senado e da Câmara dos Representantes para o máximo.",
+  ru: "Только для США: установить поддержку Сената и Палаты представителей на максимум."
+},
+desc_army_leaders_god: {
+  zh: "所選國家的所有陸軍將領：特質槽 +10、技能等級 +10，並強化各項能力",
+  en: "Selected country (Army leaders): +10 trait slots, +10 skill level, and boosted stats.",
+  ja: "選択した国（陸軍指揮官）：特質枠+10、スキルレベル+10、各能力を強化。",
+  ko: "선택한 국가(육군 지휘관): 특성 슬롯 +10, 스킬 레벨 +10, 능력치 강화.",
+  es: "País seleccionado (líderes del ejército): +10 ranuras de rasgos, +10 nivel de habilidad y atributos mejorados.",
+  pt: "País selecionado (líderes do exército): +10 espaços de traços, +10 nível de habilidade e atributos aprimorados.",
+  ru: "Выбранная страна (командиры армии): +10 слотов черт, +10 уровня навыка и усиление характеристик."
+},
+
+desc_navy_leaders_god: {
+  zh: "所選國家的所有海軍將領：特質槽 +10、技能等級 +10，並強化各項能力",
+  en: "Selected country (Navy leaders): +10 trait slots, +10 skill level, and boosted stats.",
+  ja: "選択した国（海軍指揮官）：特質枠+10、スキルレベル+10、各能力を強化。",
+  ko: "선택한 국가(해군 지휘관): 특성 슬롯 +10, 스킬 레벨 +10, 능력치 강화.",
+  es: "País seleccionado (líderes navales): +10 ranuras de rasgos, +10 nivel de habilidad y atributos mejorados.",
+  pt: "País selecionado (líderes navais): +10 espaços de traços, +10 nível de habilidade e atributos aprimorados.",
+  ru: "Выбранная страна (командиры флота): +10 слотов черт, +10 уровня навыка и усиление характеристик."
+},
+
+desc_promote_all_army_leaders: {
+  zh: "所選國家的所有陸軍將領：直接升任陸軍元帥",
+  en: "Selected country: promote all army leaders to Field Marshal.",
+  ja: "選択した国：陸軍指揮官を全員、元帥に昇格。",
+  ko: "선택한 국가: 모든 육군 지휘관을 원수로 승격.",
+  es: "País seleccionado: asciende a todos los líderes del ejército a mariscal de campo.",
+  pt: "País selecionado: promove todos os líderes do exército a marechal de campo.",
+  ru: "Выбранная страна: повысить всех командиров армии до фельдмаршалов."
+},
+
+desc_army_leaders_god_root: {
+  zh: "所選國家的所有陸軍將領：特質槽 +10、技能等級 +10（同效果替代寫法）",
+  en: "Selected country (Army leaders): +10 trait slots and +10 skill level (alternate version).",
+  ja: "選択した国（陸軍指揮官）：特質枠+10、スキルレベル+10（同効果の別記述）。",
+  ko: "선택한 국가(육군 지휘관): 특성 슬롯 +10, 스킬 레벨 +10(동일 효과의 다른 버전).",
+  es: "País seleccionado (líderes del ejército): +10 ranuras de rasgos y +10 nivel de habilidad (versión alternativa).",
+  pt: "País selecionado (líderes do exército): +10 espaços de traços e +10 nível de habilidade (versão alternativa).",
+  ru: "Выбранная страна (командиры армии): +10 слотов черт и +10 уровня навыка (альтернативная версия)."
+},
+
+desc_navy_leaders_god_root: {
+  zh: "所選國家的所有海軍將領：特質槽 +10、技能等級 +10（同效果替代寫法）",
+  en: "Selected country (Navy leaders): +10 trait slots and +10 skill level (alternate version).",
+  ja: "選択した国（海軍指揮官）：特質枠+10、スキルレベル+10（同効果の別記述）。",
+  ko: "선택한 국가(해군 지휘관): 특성 슬롯 +10, 스킬 레벨 +10(동일 효과의 다른 버전).",
+  es: "País seleccionado (líderes navales): +10 ranuras de rasgos y +10 nivel de habilidad (versión alternativa).",
+  pt: "País selecionado (líderes navais): +10 espaços de traços e +10 nível de habilidade (versão alternativa).",
+  ru: "Выбранная страна (командиры флота): +10 слотов черт и +10 уровня навыка (альтернативная версия)."
+},
+
+desc_army_leader_god_single: {
+  zh: "所選陸軍將領：特質槽 +10、技能等級 +10，並強化各項能力",
+  en: "Selected army leader: +10 trait slots, +10 skill level, and boosted stats.",
+  ja: "選択した陸軍指揮官：特質枠+10、スキルレベル+10、各能力を強化。",
+  ko: "선택한 육군 지휘관: 특성 슬롯 +10, 스킬 레벨 +10, 능력치 강화.",
+  es: "Líder del ejército seleccionado: +10 ranuras de rasgos, +10 nivel de habilidad y atributos mejorados.",
+  pt: "Líder do exército selecionado: +10 espaços de traços, +10 nível de habilidade e atributos aprimorados.",
+  ru: "Выбранный командир армии: +10 слотов черт, +10 уровня навыка и усиление характеристик."
+},
+
+desc_navy_leader_god_single: {
+  zh: "所選海軍將領：特質槽 +10、技能等級 +10，並強化各項能力（需選擇特遣艦隊）",
+  en: "Selected navy leader: +10 trait slots, +10 skill level, and boosted stats (select a task force).",
+  ja: "選択した海軍指揮官：特質枠+10、スキルレベル+10、各能力を強化（任務部隊を選択）。",
+  ko: "선택한 해군 지휘관: 특성 슬롯 +10, 스킬 레벨 +10, 능력치 강화(태스크 포스 선택).",
+  es: "Líder naval seleccionado: +10 ranuras de rasgos, +10 nivel de habilidad y atributos mejorados (selecciona una fuerza de tarea).",
+  pt: "Líder naval selecionado: +10 espaços de traços, +10 nível de habilidade e atributos aprimorados (selecione uma força-tarefa).",
+  ru: "Выбранный командир флота: +10 слотов черт, +10 уровня навыка и усиление характеристик (выберите оперативное соединение)."
+},
+
     // 🔢 裝備代碼速查表
   section_equipment_table: {
     zh: "🔢 裝備代碼速查表",
@@ -2135,4 +2639,5 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("langSelector").value = currentLang;
   applyLanguage(currentLang);
 });
+
 

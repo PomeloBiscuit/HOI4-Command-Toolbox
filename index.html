@@ -502,10 +502,10 @@
 <li data-i18n="desc_agency.instant：即刻完成行動"><code>agency.instant</code>：<span data-i18n="desc_agency_instant">即刻完成行動</span></li>
 <li data-i18n="desc_operation.instant：秒完成任務"><code>Operation.Instant</code>：<span data-i18n="desc_operation_instant">秒完成任務</span></li>
 <li data-i18n="desc_prevent_operative_detection：不被發現"><code>prevent_operative_detection</code>：<span data-i18n="desc_prevent_operative_detection">不被發現</span></li>
-<li data-i18n="desc_add_top_scientist：加入頂尖科學家"><code>add_top_scientist</code>：<span data-i18n="desc_add_top_scientist">加入頂尖科學家</span></li>
-<li><code>allowideas</code>：<span data-i18n="desc_allowideas">無條件解鎖所有法案與三軍精神</span></li>
-<li><code>collaboration &lt;amount&gt;</code>：<span data-i18n="desc_collaboration_amount">建立合作政府（右鍵指定國家），設定合作程度</span></li>
-<li><code>nocb</code>：<span data-i18n="desc_nocb">解鎖所有外交選項（對 AI 有效通常需暫停）</span></li>
+<li data-i18n="desc_sp_add_mastermind：加入頂尖科學家"><code>sp_add_mastermind</code>：<span data-i18n="desc_sp_add_mastermind">加入頂尖科學家</span></li>
+<li data-i18n="desc_allowideas"：允許自由分配國家理念"><code>allowideas</code>：<span data-i18n="desc_allowideas">允許自由分配國家理念</span></li>
+<li data-i18n="desc_collaboration_amount"：建立合作政府（右鍵指定國家），設定合作程度"><code>collaboration &lt;amount&gt;</code>：<span data-i18n="desc_collaboration_amount">建立合作政府（右鍵指定國家），設定合作程度</span></li>
+<li data-i18n="desc_nocb"：解鎖所有外交選項（對 AI 有效通常需暫停）"><code>nocb</code>：<span data-i18n="desc_nocb">解鎖所有外交選項（對 AI 有效通常需暫停）</span></li>
 
 </ul>
 </section>
@@ -546,6 +546,111 @@
 <li><code>bop_remove &lt;id&gt;</code>：<span data-i18n="desc_bop_remove_id">移除指定權力平衡（輸入 ID）</span></li>
 <li><code>bank &lt;amount&gt;</code>：<span data-i18n="desc_bank_amount">增加國際市場經濟產能盈餘（數值）</span></li>
 <li><code>collaboration &lt;amount&gt;</code>：<span data-i18n="desc_collaboration_amount">建立合作政府（右鍵指定國家），設定合作程度</span></li>
+<!-- 7：國家範圍／所有控制地區補給中心 + 5 級鐵路 -->
+<li>
+  <code data-i18n="code_supply_node_and_rail">eval_effect every_controlled_state={construct_building_in_random_province={supply_node=1}every_neighbor_state={limit={is_controlled_by=ROOT}ROOT={build_railway={level=5 build_only_on_allied=yes start_state=PREV target_state=PREV.PREV}}}}</code>：
+  <span data-i18n="desc_supply_node_and_rail">
+    所選國家的所有控制地區將新增 1 個補給中心，並自動建造 5 級鐵路進行連接
+  </span>
+</li>
+
+<!-- 8：地區範圍／沿海省份滿級海軍基地 -->
+<li>
+  <code data-i18n="code_state_coastal_naval_base_10">eval_effect add_building_construction={type=naval_base level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}</code>：
+  <span data-i18n="desc_state_coastal_naval_base_10">
+    所選地區的所有沿海省份將直接建造滿級海軍基地
+  </span>
+</li>
+
+<!-- 9：地區範圍／沿海省份海軍補給中心 -->
+<li>
+  <code data-i18n="code_state_coastal_naval_supply_hub">eval_effect add_building_construction={type=naval_supply_hub level=1 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}</code>：
+  <span data-i18n="desc_state_coastal_naval_supply_hub">
+    所選地區的所有沿海省份將新增海軍補給中心
+  </span>
+</li>
+
+<!-- 10：國家範圍／控制沿海省份滿級海岸要塞 -->
+<li>
+  <code data-i18n="code_country_coastal_bunker_10">eval_effect every_controlled_state={limit={is_coastal=yes}add_building_construction={type=coastal_bunker level=10 instant_build=yes province={all_provinces=yes limit_to_coastal=yes}}}</code>：
+  <span data-i18n="desc_country_coastal_bunker_10">
+    所選國家控制的所有沿海省份將建造滿級海岸要塞
+  </span>
+</li>
+
+<!-- 11：國家範圍／控制邊境省份滿級陸上要塞 -->
+<li>
+  <code data-i18n="code_country_border_bunker_10">eval_effect every_controlled_state={add_building_construction={type=bunker level=10 instant_build=yes province={all_provinces=yes limit_to_border=yes}}}</code>：
+  <span data-i18n="desc_country_border_bunker_10">
+    所選國家控制的所有邊境省份將建造滿級陸上要塞
+  </span>
+</li>
+
+<!-- 12：國家範圍／地區 10 倍 buff（人力/工廠/資源/補給/建造） -->
+<li>
+  <code data-i18n="code_every_owned_state_x10">eval_effect every_owned_state={add_state_modifier={modifier={local_manpower=10 local_non_core_manpower=10 local_factories=10 local_resources=10 local_supplies=10 state_production_speed_buildings_factor=10}}}</code>：
+  <span data-i18n="desc_every_owned_state_x10">
+    所選國家的所有地區將套用 10 倍人力、工廠、資源、補給與建造速度加成
+  </span>
+</li>
+<!-- 基礎設施 / 建築升級 -->
+
+<!-- 1：所有區域基礎設施 -->
+<li>
+  <code>
+eval_effect every_controlled_state={add_building_construction={
+type=infrastructure
+level=5
+instant_build=yes
+}}
+  </code>：
+  <span data-i18n="desc_country_infrastructure_lv5"></span>
+</li>
+
+<!-- 2：所有區域空軍基地 -->
+<li>
+  <code>
+eval_effect every_controlled_state={add_building_construction={
+type=air_base
+level=10
+instant_build=yes
+}}
+  </code>：
+  <span data-i18n="desc_country_air_base_lv10"></span>
+</li>
+
+<!-- 3：所有區域防空設施 -->
+<li>
+  <code>
+eval_effect every_controlled_state={add_building_construction={
+type=anti_air_building
+level=5
+instant_build=yes
+}}
+  </code>：
+  <span data-i18n="desc_country_anti_air_lv5"></span>
+</li>
+
+<!-- 4：所有區域雷達站 -->
+<li>
+  <code>
+eval_effect every_controlled_state={add_building_construction={
+type=radar_station
+level=6
+instant_build=yes
+}}
+  </code>：
+  <span data-i18n="desc_country_radar_lv6"></span>
+</li>
+
+<!-- 美國專用：國會支持率 -->
+<li>
+  <code>
+eval_effect USA={set_variable={senators_support=senators_total}set_variable={representatives_support=representatives_total}}
+  </code>：
+  <span data-i18n="desc_usa_congress_full_support"></span>
+</li>
+
 </ul>
 </section>
 <section id="section-2">
@@ -594,7 +699,57 @@
 <ul>
 <li data-i18n="desc_allowtraits：解鎖全部將領特質"><code>allowtraits</code>：<span data-i18n="desc_allowtraits">解鎖全部將領特質</span></li>
 <li data-i18n="desc_gain_xp：增加將領經驗"><code>gain_xp</code>：<span data-i18n="desc_gain_xp">增加將領經驗</span></li>
+<li>
+  <code data-i18n="code_army_leaders_god">eval_effect every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}</code>：
+  <span data-i18n="desc_army_leaders_god">
+    所選國家的所有陸軍將領：特質槽 +10、技能等級 +10，並強化各項能力
+  </span>
+</li>
+
+<li>
+  <code data-i18n="code_navy_leaders_god">eval_effect every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}</code>：
+  <span data-i18n="desc_navy_leaders_god">
+    所選國家的所有海軍將領：特質槽 +10、技能等級 +10，並強化各項能力
+  </span>
+</li>
+
+<li>
+  <code data-i18n="code_promote_all_army_leaders">eval_effect every_army_leader={if={limit={is_field_marshal=no}promote_leader=yes}}</code>：
+  <span data-i18n="desc_promote_all_army_leaders">
+    所選國家的所有陸軍將領：直接升任陸軍元帥
+  </span>
+</li>
+
+<li>
+  <code data-i18n="code_army_leaders_god_root">eval_effect ROOT={every_army_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}}</code>：
+  <span data-i18n="desc_army_leaders_god_root">
+    所選國家的所有陸軍將領：特質槽 +10、技能等級 +10（同效果替代寫法）
+  </span>
+</li>
+
+<li>
+  <code data-i18n="code_navy_leaders_god_root">eval_effect ROOT={every_navy_leader={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}}</code>：
+  <span data-i18n="desc_navy_leaders_god_root">
+    所選國家的所有海軍將領：特質槽 +10、技能等級 +10（同效果替代寫法）
+  </span>
+</li>
+
+<li>
+  <code data-i18n="code_army_leader_god_single">eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_planning=10 add_logistics=10}</code>：
+  <span data-i18n="desc_army_leader_god_single">
+    所選陸軍將領：特質槽 +10、技能等級 +10，並強化各項能力
+  </span>
+</li>
+
+<li>
+  <code data-i18n="code_navy_leader_god_single">eval_effect ROOT={add_max_trait=10 add_skill_level=10 add_attack=10 add_defense=10 add_maneuver=10 add_coordination=10}</code>：
+  <span data-i18n="desc_navy_leader_god_single">
+    所選海軍將領：特質槽 +10、技能等級 +10，並強化各項能力（需選擇特遣艦隊）
+  </span>
+</li>
+
 </ul>
+
 </section>
 <section id="section-6">
 <h2 data-i18n="section_6_title">🛢 資源能源</h2>
@@ -619,6 +774,77 @@
 <li data-i18n="desc_prevent_operative_detection：不被發現"><code>prevent_operative_detection</code>：<span data-i18n="desc_prevent_operative_detection">不被發現</span></li>
 <li data-i18n="desc_resistance：提高抵抗度"><code>resistance</code>：<span data-i18n="desc_resistance">提高抵抗度</span></li>
 <li data-i18n="desc_compliance：提高順從度"><code>compliance</code>：<span data-i18n="desc_compliance">提高順從度</span></li>
+
+<li>
+  <code>eval_effect every_country={ROOT={every_operative={if={limit={NOT={has_nationality=PREV.PREV}}add_nationality=PREV.PREV}}}}</code>：
+  <span>所選的國家會為其所有特工新增所有國家的國籍</span>
+</li>
+
+<li>
+  <code>eval_effect every_country={ROOT={if={limit={NOT={has_nationality=PREV}}add_nationality=PREV}}}</code>：
+  <span>所選的特工（需切換至特工地圖模式）將新增所有國家的國籍</span>
+</li>
+
+<li>
+  <code>eval_effect FROM={every_other_country={every_operative={limit={is_operative_captured=no check_variable={operation_country=FROM}}capture_operative={captured_by=FROM ignore_death_chance=yes}}}}</code>：
+  <span>俘獲所有正在我國境內活動的外國特工（即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect FROM={every_other_country={every_operative={limit={check_variable={operation_country=FROM}}kill_operative={killed_by=FROM}}}}</code>：
+  <span>擊殺所有正在我國境內活動的外國特工（即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect every_operative={capture_operative={captured_by=FROM ignore_death_chance=yes}}</code>：
+  <span>所選的國家，其全部特工將被俘獲（即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect FROM={every_other_country={add_to_temp_array={a=THIS}}}FROM={for_each_scope_loop={array=a every_operative={capture_operative={captured_by=FROM ignore_death_chance=yes}}}clear_temp_array=a}</code>：
+  <span>俘獲所有其他國家的全部特工（不包含玩家自己的特工；即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect every_operative={kill_operative={killed_by=FROM}}</code>：
+  <span>所選的國家，其全部特工將被擊殺（即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect FROM={every_other_country={add_to_temp_array={a=THIS}}}FROM={for_each_scope_loop={array=a every_operative={kill_operative={killed_by=FROM}}}clear_temp_array=a}</code>：
+  <span>擊殺所有其他國家的全部特工（不包含玩家自己的特工；即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect if={limit={NOT={tag=FROM}}FROM={add_intel={target=ROOT civilian_intel=100 army_intel=100 navy_intel=100 airforce_intel=100}}}</code>：
+  <span>取得所選國家的 100% 民政、陸軍、海軍與空軍情報（有上限且會隨時間衰減，可能需要稍等時間生效）</span>
+</li>
+
+<li>
+  <code>eval_effect FROM={every_enemy_country={PREV={add_intel={target=PREV civilian_intel=100 army_intel=100 navy_intel=100 airforce_intel=100}}}}</code>：
+  <span>取得所有敵對國家的 100% 民政、陸軍、海軍與空軍情報（即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect FROM={every_other_country={PREV={add_intel={target=PREV civilian_intel=100 army_intel=100 navy_intel=100 airforce_intel=100}}}}</code>：
+  <span>取得所有其他國家的 100% 民政、陸軍、海軍與空軍情報（即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect if={limit={NOT={tag=FROM}}FROM={add_decryption={target=ROOT ratio=1}}}</code>：
+  <span>所選的國家，其密碼將被完全破譯（即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect FROM={every_enemy_country={PREV={add_decryption={target=PREV ratio=1}}}}</code>：
+  <span>所有敵對國家的密碼將被完全破譯（即使未建立情報機構）</span>
+</li>
+
+<li>
+  <code>eval_effect FROM={every_other_country={PREV={add_decryption={target=PREV ratio=1}}}}</code>：
+  <span>所有其他國家的密碼將被完全破譯（即使未建立情報機構）</span>
+</li>
+
 </ul>
 </section>
 <section id="section-8">
@@ -1049,7 +1275,7 @@ tdebug：顯示省州_id，與地圖層切換搭配最佳"><strong data-i18n="ma
 <p data-i18n="footer_notice">本網站為 HOI4 玩家社群自製參考工具，非 Paradox Interactive 官方產品。</p>
 <p data-i18n="footer_trademark"></p></p>
 <p data-i18n="footer_contact"></p></p>
-<p><span data-i18n="footer_github"></span>：<a href="https://github.com/你的帳號/hoi4-console-helper" style="color:#00796b; text-decoration:underline;" target="_blank">前往 GitHub</a></p>
+<p><span data-i18n="footer_github"></span>：<a href="https://github.com/PomeloBiscuit/HOI4-Command-Toolbox" style="color:#00796b; text-decoration:underline;" target="_blank">前往 GitHub</a></p>
 <p>© 2026 HOI4 Command Toolbox</p>
 </footer>
 
